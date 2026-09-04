@@ -3,11 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alexey Dubov | Building the Future of the Built World</title>
-  <meta name="description" content="6x Startup Founder, Angel Investor, and Managing Partner at BuildTech Ventures. Building frontier technology companies — from concept to the first proof.">
+  <title>Alexey Dubov | 6x Founder, Managing Partner at BuildTech Ventures</title>
+  <meta name="description" content="6x startup founder with 2 exits. Managing Partner at BuildTech Ventures. I build frontier technology companies in construction tech, robotics, and advanced materials.">
+  <link rel="canonical" href="https://hovl.github.io/alexey-dubov-site/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alexey Dubov | Building the Future of the Built World">
+  <meta property="og:description" content="6x startup founder with 2 exits. Managing Partner at BuildTech Ventures. I build frontier technology companies from concept to the first proof.">
+  <meta property="og:url" content="https://hovl.github.io/alexey-dubov-site/">
+  <meta property="og:image" content="https://hovl.github.io/alexey-dubov-site/images/alexey-dubov.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alexey Dubov | Building the Future of the Built World">
+  <meta name="twitter:description" content="6x startup founder with 2 exits. Managing Partner at BuildTech Ventures.">
+  <meta name="twitter:image" content="https://hovl.github.io/alexey-dubov-site/images/alexey-dubov.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alexey Dubov",
+    "url": "https://hovl.github.io/alexey-dubov-site/",
+    "image": "https://hovl.github.io/alexey-dubov-site/images/alexey-dubov.png",
+    "jobTitle": "Managing Partner",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "BuildTech Ventures",
+      "url": "https://www.buildtech.vc"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Bauman Moscow State Technical University"
+    },
+    "description": "6x startup founder with 2 exits. Building frontier technology companies in construction tech, robotics, and advanced materials.",
+    "sameAs": [
+      "https://www.linkedin.com/in/alekseydubov",
+      "https://www.buildtech.vc",
+      "https://www.echofuturematter.com"
+    ],
+    "knowsAbout": ["Construction Technology", "Robotics", "3D Printing", "Advanced Materials", "Venture Capital", "Climate Tech"]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/alexey-dubov.png">
+
+  <!-- Plausible Analytics -->
+  <script defer data-domain="hovl.github.io/alexey-dubov-site" src="https://plausible.io/js/script.tagged-events.js"></script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary-blue: #4A4AFB;
@@ -34,6 +86,28 @@
       background: var(--white);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* Skip to content (accessibility) */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: var(--primary-blue);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      z-index: 200;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Focus states (accessibility) */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--primary-blue);
+      outline-offset: 2px;
     }
 
     /* Navigation */
@@ -163,6 +237,20 @@
     .hero-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(74, 74, 251, 0.3);
+    }
+    .hero-secondary-cta {
+      display: inline-block;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-left: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-secondary-cta:hover {
+      color: var(--white);
+      border-color: var(--white);
     }
 
     /* Section base */
@@ -494,6 +582,108 @@
       margin-top: 0.5rem;
     }
 
+    /* Videos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .video-card {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+    .video-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .video-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--dark-navy);
+      overflow: hidden;
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+    .video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      background: rgba(74, 74, 251, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.2rem;
+    }
+    .video-info {
+      padding: 1.2rem 1.5rem;
+    }
+    .video-info h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dark-navy);
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+    .video-info .outlet {
+      color: var(--med-gray);
+      font-size: 0.85rem;
+    }
+
+    /* Mid-page CTA */
+    .mid-cta {
+      background: var(--primary-blue);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .mid-cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .mid-cta p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mid-cta a {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary-blue);
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .mid-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
     /* Credentials bar */
     .credentials {
       background: var(--dark-navy);
@@ -588,71 +778,6 @@
       background: #3a3ae8;
     }
 
-    /* Videos */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .video-card {
-      background: var(--white);
-      border: 1px solid var(--light-gray);
-      border-radius: 8px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: block;
-    }
-    .video-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-    .video-thumb {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--dark-navy);
-      overflow: hidden;
-    }
-    .video-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-    .video-play {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 56px;
-      height: 56px;
-      background: rgba(74, 74, 251, 0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 1.2rem;
-    }
-    .video-info {
-      padding: 1.2rem 1.5rem;
-    }
-    .video-info h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--dark-navy);
-      margin-bottom: 0.3rem;
-      line-height: 1.3;
-    }
-    .video-info .outlet {
-      color: var(--med-gray);
-      font-size: 0.85rem;
-    }
-
     /* Footer */
     footer {
       background: var(--dark-navy);
@@ -668,7 +793,7 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       section { padding: 4rem 1.5rem; }
-      .focus-grid, .ventures-grid, .philosophy-grid, .media-grid {
+      .focus-grid, .ventures-grid, .philosophy-grid, .media-grid, .video-grid {
         grid-template-columns: 1fr;
       }
       .hero { padding: 6rem 1.5rem 4rem; }
@@ -680,13 +805,17 @@
         gap: 0.5rem;
       }
       .writing-meta { margin-left: 0; }
+      .hero-secondary-cta { display: block; margin-left: 0; margin-top: 1rem; }
     }
   </style>
 </head>
 <body>
 
+<!-- Skip to content (accessibility) -->
+<a href="#main" class="skip-link">Skip to content</a>
+
 <!-- Navigation -->
-<nav>
+<nav role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#" class="nav-logo">Alexey <span>Dubov</span></a>
     <div class="nav-links">
@@ -702,21 +831,24 @@
   </div>
 </nav>
 
+<main id="main">
+
 <!-- Hero -->
-<section class="hero">
+<section class="hero" aria-label="Introduction">
   <div class="hero-content">
-    <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/67572ec5471ff637232e1526_Alexey%20Dubov.png" alt="Alexey Dubov" class="hero-photo">
+    <img src="images/alexey-dubov.png" alt="Alexey Dubov" class="hero-photo" width="160" height="160">
     <div class="hero-pill">Deep Tech &middot; Built World &middot; Frontier Ventures</div>
     <h1>I build frontier technology companies &mdash; <em>from concept to the first proof</em></h1>
     <p class="hero-subtitle">
       Most of my career has been spent in domains that didn't exist yet. 3D-printed construction materials. Robotics automation. Health-friendly photonics. A technically ambitious idea with high uncertainty, a regulatory barrier, and a small team trying to figure out if it can actually work. That's where I start.
     </p>
-    <a href="#contact" class="hero-cta">Get in Touch</a>
+    <a href="mailto:alexey@buildtech.vc" class="hero-cta" data-plausible-event="cta-hero">Work With Me</a>
+    <a href="images/alexey-dubov-bio.pdf" class="hero-secondary-cta" data-plausible-event="download-bio">Download Bio (PDF)</a>
   </div>
 </section>
 
 <!-- Credentials Bar -->
-<section class="credentials">
+<section class="credentials" aria-label="Key metrics">
   <div class="credentials-grid">
     <div class="cred-item">
       <span class="num">6</span>
@@ -738,12 +870,12 @@
 </section>
 
 <!-- About -->
-<section id="about">
+<section id="about" aria-label="About Alexey Dubov">
   <div class="container">
     <span class="section-label">About</span>
     <h2 class="section-title">From Moscow to the frontier of construction</h2>
     <div class="about-grid">
-      <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/67572ec5471ff637232e1526_Alexey%20Dubov.png" alt="Alexey Dubov" class="about-photo">
+      <img src="images/alexey-dubov.png" alt="Alexey Dubov, Managing Partner at BuildTech Ventures" class="about-photo" width="280" height="280" loading="lazy">
       <div>
         <p class="section-desc" style="max-width: 100%;">
           I started my first company in my second year at Bauman Moscow State Technical University. A guy I met was willing to invest in ideas, and I had classmates willing to work. Within three years I had six of them working alongside me. I sold that company and kept going.
@@ -771,24 +903,24 @@
 </section>
 
 <!-- How I Can Help -->
-<section class="focus" id="focus">
+<section class="focus" id="focus" aria-label="What I do">
   <div class="container">
     <span class="section-label">Focus</span>
     <h2 class="section-title">What I do</h2>
     <p class="section-desc">I evaluate and de-risk frontier technology. That means getting hands-on with the physics, the regulation, the customer workflow, and the team. Then deciding if the bet is worth making.</p>
     <div class="focus-grid">
       <div class="focus-card">
-        <div class="focus-card-icon">&#9670;</div>
+        <div class="focus-card-icon" aria-hidden="true">&#9670;</div>
         <h3>Venture Capital</h3>
         <p>Through BuildTech Ventures, I invest in early-stage companies in construction tech, real estate tech, robotics, climate tech, and advanced materials. Typical check: $1M to $10M, Pre-Seed through Series A. I look for teams solving real problems in the built environment with technology that actually works.</p>
       </div>
       <div class="focus-card">
-        <div class="focus-card-icon">&#9671;</div>
+        <div class="focus-card-icon" aria-hidden="true">&#9671;</div>
         <h3>Frontier Innovation</h3>
         <p>I've taken ideas from lab to first-in-the-world certification. Photopolymer composites replacing steel rebar. UL-listed 3D-printed building elements. Co-authored standards with UL, ASTM, and ISO. The hard part isn't the technology. It's getting physics, chemistry, manufacturing, and regulation to line up at the same time.</p>
       </div>
       <div class="focus-card">
-        <div class="focus-card-icon">&#9672;</div>
+        <div class="focus-card-icon" aria-hidden="true">&#9672;</div>
         <h3>Cultural Laboratory</h3>
         <p>With Andrei Hakhovich, I co-founded Echoes of Future Matter. It's a research platform at the intersection of design, technology, and material innovation. Exhibitions, panels, interviews. We explore how emerging technologies change the way we make things, and whether they should.</p>
       </div>
@@ -797,14 +929,14 @@
 </section>
 
 <!-- Ventures -->
-<section id="ventures">
+<section id="ventures" aria-label="Companies I've built">
   <div class="container">
     <span class="section-label">Ventures</span>
     <h2 class="section-title">Companies I've built</h2>
     <p class="section-desc">Six companies across four countries. Two exits. The common thread: building in domains where the technology doesn't exist yet.</p>
     <div class="ventures-grid">
       <div class="venture-card">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/6756395fd96257851ef554a8_Mighty%20Buildings.png" alt="Mighty Buildings" class="venture-logo light-filter">
+        <img src="images/mighty-buildings.png" alt="Mighty Buildings logo" class="venture-logo light-filter" width="120" height="36" loading="lazy">
         <h3>Mighty Buildings</h3>
         <div class="role">Co-Founder &middot; CIO / COO &middot; 2017 &ndash; 2025</div>
         <p>3D printing, advanced materials, and robotic automation for construction. Took a materials hypothesis from lab to the first UL-listed 3D-printed building elements in the world. $200M+ raised. 60+ buildings delivered. Co-authored UL3401 and ISO/ASTM 52939. YC W18.</p>
@@ -820,7 +952,7 @@
         <p>US market growth accelerator for construction and real estate tech startups. We help companies from Europe, the UK, and beyond validate use cases, land pilots, and close early revenue with US corporates. In partnership with Plug and Play.</p>
       </div>
       <div class="venture-card">
-        <img src="https://images.squarespace-cdn.com/content/v1/688a6681798b9772f64a470e/158d4b94-73c9-44d5-9d8c-3909edb388af/photo_2025-09-15+20.04.56.jpeg" alt="Echoes of Future Matter" class="venture-logo light-filter">
+        <img src="images/eofm.jpeg" alt="Echoes of Future Matter" class="venture-logo light-filter" width="120" height="36" loading="lazy">
         <h3>Echoes of Future Matter</h3>
         <div class="role">Co-Founder &middot; 2025 &ndash; Present</div>
         <p>Cultural research laboratory exploring materiality and design futures. Exhibitions, panels, and interviews at the intersection of architecture, design, and emerging technologies. Co-founded with Andrei Hakhovich.</p>
@@ -831,7 +963,7 @@
         <p>Smart wall clock that shows contextual information from your apps. Calendar, weather, calls, voice assistant responses. Built in Singapore, shipped 3,000+ units. Acquired by NeXtime.</p>
       </div>
       <div class="venture-card">
-        <img src="https://images.squarespace-cdn.com/content/v1/55ddcf15e4b0c1876c8b1804/1440600236903-972H7DCXN04DU1GY16X4/svet-logo-white-small.png?format=1500w" alt="SVET Labs" class="venture-logo">
+        <img src="images/svet-logo.png" alt="SVET Labs logo" class="venture-logo" width="80" height="36" loading="lazy">
         <h3>SVET Labs</h3>
         <div class="role">Founder &middot; CEO &middot; 2016 &ndash; 2017</div>
         <p>The first health-friendly LED light bulb. Mimics daylight dynamics to support circadian rhythm. Rich-spectrum output, built-in biological safety system. Built in Singapore and Moscow.</p>
@@ -842,7 +974,7 @@
         <p>Digital content distribution kiosks for retail. You'd walk into a store, pick a movie or game, and get it on physical media in three to five minutes. Launched in Moscow, expanded to Germany. Presented at Gamescom 2009. Pioneered on-demand content before streaming took over.</p>
       </div>
       <div class="venture-card">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/6756397aa66351f5b44c56c0_Jack.png" alt="RuJack" class="venture-logo light-filter">
+        <img src="images/rujack.png" alt="RuJack logo" class="venture-logo light-filter" width="80" height="36" loading="lazy">
         <h3>RuJack</h3>
         <div class="role">Co-Founder &middot; CTO</div>
         <p>Hardware technology venture. Acquired by LG Electronics.</p>
@@ -852,68 +984,68 @@
 </section>
 
 <!-- Portfolio -->
-<section class="focus" id="portfolio">
+<section class="focus" id="portfolio" aria-label="Portfolio investments">
   <div class="container">
     <span class="section-label">Portfolio</span>
     <h2 class="section-title">Key investments</h2>
     <p class="section-desc">Selected companies from the BuildTech Ventures portfolio. Each one is pushing on a real problem in the built environment.</p>
     <div class="portfolio-grid">
-      <a href="https://www.buildtech.vc/portfolio/kite-compliance" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/6a46c0a6e452f1540e3ee40c_images%20(3).png" alt="Kite Compliance" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/kite-compliance" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/kite-compliance.png" alt="Kite Compliance logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Kite Compliance</h4>
         <span class="portfolio-tag">AI</span><span class="portfolio-tag">Compliance</span>
         <div class="portfolio-stage">2026 &middot; Pre-Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/rem-brain" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/6a46c055209f498d10857292_rembrain_logo.jpeg" alt="Rem Brain" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/rem-brain" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/rem-brain.jpeg" alt="Rem Brain logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Rem Brain</h4>
         <span class="portfolio-tag">Robotics</span>
         <div class="portfolio-stage">2025 &middot; Pre-Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/higharc" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b97117c5b0cfdbc6638f0_Higharc%20Logo.png" alt="Higharc" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/higharc" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/higharc.png" alt="Higharc logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Higharc</h4>
         <span class="portfolio-tag">Automated Design</span>
         <div class="portfolio-stage">2024 &middot; Series B</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/hywatts" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b97089c19bebe3d3b18f9_HyWatts%20Logo.png" alt="HyWatts" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/hywatts" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/hywatts.png" alt="HyWatts logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>HyWatts</h4>
         <span class="portfolio-tag">New Energy</span>
         <div class="portfolio-stage">2024 &middot; Pre-Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/beam" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b997235bda85fc83c7582_Beam%20Logo.png" alt="Beam" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/beam" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/beam.png" alt="Beam logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Beam</h4>
         <span class="portfolio-tag">M&amp;A</span><span class="portfolio-tag">Payments</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/bundle" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b96fa00a028622a63573a_Bundle%20Logo.png" alt="Bundle" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/bundle" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/bundle.png" alt="Bundle logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Bundle</h4>
         <span class="portfolio-tag">Marketplace</span><span class="portfolio-tag">Procurement</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/tangible-materials" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b96f56fea9d140bb875f6_Tangible%20Materials%20Logo.png" alt="Tangible Materials" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/tangible-materials" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/tangible-materials.png" alt="Tangible Materials logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Tangible Materials</h4>
         <span class="portfolio-tag">CO2 Reduction</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/rise" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b96ea1f5474e6bcfff540_Rise%20Logo.png" alt="Rise" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/rise" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/rise.png" alt="Rise logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Rise</h4>
         <span class="portfolio-tag">Sustainability</span>
         <div class="portfolio-stage">2023 &middot; Series A</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/wreno" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b96e51f5474e6bcffeeed_Wreno%20Logo.png" alt="Wreno" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/wreno" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/wreno.png" alt="Wreno logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>Wreno</h4>
         <span class="portfolio-tag">AI/ML</span><span class="portfolio-tag">Marketplace</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/arx" class="portfolio-card" target="_blank">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/673b96f0d2f30fb4403292a3_ARX%20Logo.png" alt="ARX" class="portfolio-logo">
+      <a href="https://www.buildtech.vc/portfolio/arx" class="portfolio-card" target="_blank" rel="noopener">
+        <img src="images/arx.png" alt="ARX logo" class="portfolio-logo" width="100" height="32" loading="lazy">
         <h4>ARX</h4>
         <span class="portfolio-tag">Data Insights</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
@@ -922,195 +1054,167 @@
   </div>
 </section>
 
+<!-- Mid-page CTA -->
+<section class="mid-cta" aria-label="Get in touch">
+  <h2>Working on something hard in the built world?</h2>
+  <p>I invest in early-stage teams solving real problems with real technology. If that's you, let's talk.</p>
+  <a href="mailto:alexey@buildtech.vc" data-plausible-event="cta-midpage">Get in Touch</a>
+</section>
+
 <!-- Writing / Articles -->
-<section id="writing">
+<section id="writing" aria-label="Articles and writing">
   <div class="container">
     <span class="section-label">Writing</span>
     <h2 class="section-title">Articles &amp; perspectives</h2>
     <p class="section-desc">What I think about when I'm not building companies. Construction tech, robotics, AI infrastructure, and how the built world actually works.</p>
     <div class="writing-list">
-
       <div class="year-divider">2026</div>
-
-      <a href="https://www.linkedin.com/posts/alekseydubov_ai-infrastructure-has-a-quality-control-problem-activity-7480882626157371392-BLhX" class="writing-item" target="_blank">
+      <a href="https://www.linkedin.com/posts/alekseydubov_ai-infrastructure-has-a-quality-control-problem-activity-7480882626157371392-BLhX" class="writing-item" target="_blank" rel="noopener">
         <h4>AI Infrastructure Has a Quality Control Problem Nobody's Pricing In</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Aug 2026</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Aug 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/posts/alekseydubov_the-missing-layer-in-teleoperation-cognitive-activity-7477741510298595328-p4up" class="writing-item" target="_blank">
+      <a href="https://www.linkedin.com/posts/alekseydubov_the-missing-layer-in-teleoperation-cognitive-activity-7477741510298595328-p4up" class="writing-item" target="_blank" rel="noopener">
         <h4>The Missing Layer in Teleoperation: Cognitive State Awareness</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/posts/alekseydubov_the-robot-in-the-room-why-dexterity-not-activity-7472063498701246464-KVjL" class="writing-item" target="_blank">
+      <a href="https://www.linkedin.com/posts/alekseydubov_the-robot-in-the-room-why-dexterity-not-activity-7472063498701246464-KVjL" class="writing-item" target="_blank" rel="noopener">
         <h4>The Robot in the Room: Why Dexterity, Not Price, Is the Real Barrier to Automating Construction</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/pulse/air-quality-flywheel-alexey-dubov-ioi7c" class="writing-item" target="_blank">
+      <a href="https://www.linkedin.com/pulse/air-quality-flywheel-alexey-dubov-ioi7c" class="writing-item" target="_blank" rel="noopener">
         <h4>The Air Quality Flywheel</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/pulse/permitting-bottleneck-real-ai-infrastructure-problem-alexey-dubov-9qt0c" class="writing-item" target="_blank">
+      <a href="https://www.linkedin.com/pulse/permitting-bottleneck-real-ai-infrastructure-problem-alexey-dubov-9qt0c" class="writing-item" target="_blank" rel="noopener">
         <h4>The Permitting Bottleneck Is the Real AI Infrastructure Problem</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-
       <div class="year-divider">2025</div>
-
-      <a href="https://buildtech.vc/post/from-pilot-to-scale-lessons-from-buildtech-vc-and-plug-and-play" class="writing-item" target="_blank">
+      <a href="https://buildtech.vc/post/from-pilot-to-scale-lessons-from-buildtech-vc-and-plug-and-play" class="writing-item" target="_blank" rel="noopener">
         <h4>From Pilot to Scale: Lessons from BuildTech VC and Plug and Play</h4>
-        <div class="writing-meta"><span class="source">BuildTech</span><span class="date">Jun 2025</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">BuildTech</span><span class="date">Jun 2025</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://buildtech.vc/blog" class="writing-item" target="_blank">
+      <a href="https://buildtech.vc/blog" class="writing-item" target="_blank" rel="noopener">
         <h4>Echoes of Future Matter: Designing Toward What's Next</h4>
-        <div class="writing-meta"><span class="source">BuildTech</span><span class="date">Jun 2025</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">BuildTech</span><span class="date">Jun 2025</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-
       <div class="year-divider">2023 &ndash; 2024</div>
-
-      <a href="https://www.linkedin.com/posts/alekseydubov_ive-been-observing-an-exciting-dynamic-in-activity-7361448608090542081-4Mi-" class="writing-item" target="_blank">
+      <a href="https://www.linkedin.com/posts/alekseydubov_ive-been-observing-an-exciting-dynamic-in-activity-7361448608090542081-4Mi-" class="writing-item" target="_blank" rel="noopener">
         <h4>3D Printing in Construction: A Pivotal Year Ahead</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">2024</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">2024</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://crystal.geekestate.com/2024-in-the-rearview-trends-that-hit-the-mark-and-missed-transmission-311-2/" class="writing-item" target="_blank">
+      <a href="https://crystal.geekestate.com/2024-in-the-rearview-trends-that-hit-the-mark-and-missed-transmission-311-2/" class="writing-item" target="_blank" rel="noopener">
         <h4>2024 Predictions: Sustainability Metrics, AI Design Tools, and the Surge in Prefab</h4>
-        <div class="writing-meta"><span class="source">Geek Estate</span><span class="date">2024</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">Geek Estate</span><span class="date">2024</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/posts/alekseydubov_ai-in-proptech-is-taking-smart-buildings-activity-7079234172954783744-2eH_" class="writing-item" target="_blank">
+      <a href="https://www.linkedin.com/posts/alekseydubov_ai-in-proptech-is-taking-smart-buildings-activity-7079234172954783744-2eH_" class="writing-item" target="_blank" rel="noopener">
         <h4>AI in PropTech: Two Areas Where AI Can Actually Make a Difference</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2023</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2023</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-
       <div class="year-divider">2022</div>
-
-      <a href="https://www.forbes.com/councils/forbestechcouncil/2022/12/29/construction-tech-a-tough-nut-to-crack/" class="writing-item" target="_blank">
+      <a href="https://www.forbes.com/councils/forbestechcouncil/2022/12/29/construction-tech-a-tough-nut-to-crack/" class="writing-item" target="_blank" rel="noopener">
         <h4>Construction Tech &mdash; A Tough Nut to Crack</h4>
-        <div class="writing-meta"><span class="source">Forbes</span><span class="date">Dec 2022</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">Forbes</span><span class="date">Dec 2022</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://www.forbes.com/councils/forbestechcouncil/2023/01/26/15-tech-features-that-could-become-standard-fixtures-in-new-home-construction/" class="writing-item" target="_blank">
+      <a href="https://www.forbes.com/councils/forbestechcouncil/2023/01/26/15-tech-features-that-could-become-standard-fixtures-in-new-home-construction/" class="writing-item" target="_blank" rel="noopener">
         <h4>15 Tech Features That Could Become Standard in New Home Construction</h4>
-        <div class="writing-meta"><span class="source">Forbes</span><span class="date">Jan 2023</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">Forbes</span><span class="date">Jan 2023</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
-      <a href="https://www.forbes.com/councils/forbestechcouncil/2023/02/10/16-essential-factors-to-consider-when-setting-up-a-predictive-maintenance-plan/" class="writing-item" target="_blank">
+      <a href="https://www.forbes.com/councils/forbestechcouncil/2023/02/10/16-essential-factors-to-consider-when-setting-up-a-predictive-maintenance-plan/" class="writing-item" target="_blank" rel="noopener">
         <h4>16 Factors for Setting Up a Predictive Maintenance Plan</h4>
-        <div class="writing-meta"><span class="source">Forbes</span><span class="date">Feb 2023</span><span class="arrow">&rarr;</span></div>
+        <div class="writing-meta"><span class="source">Forbes</span><span class="date">Feb 2023</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
       </a>
     </div>
   </div>
 </section>
 
 <!-- Media, Podcasts & Speaking -->
-<section class="focus" id="media">
+<section class="focus" id="media" aria-label="Media appearances">
   <div class="container">
     <span class="section-label">Media</span>
     <h2 class="section-title">Podcasts, press &amp; speaking</h2>
     <p class="section-desc">Interviews, keynotes, and features across major outlets and industry events.</p>
-
     <div class="year-divider" style="margin-top: 3rem;">Podcasts &amp; Interviews</div>
     <div class="media-grid">
-      <a href="https://alejandrocremades.com/alexey-dubov" class="media-card" target="_blank">
+      <a href="https://alejandrocremades.com/alexey-dubov" class="media-card" target="_blank" rel="noopener">
         <span class="media-type podcast">Podcast</span>
         <h4>On Raising $200M to 3D Print Your Next House</h4>
         <div class="outlet">Dealmakers Podcast</div>
         <div class="media-date">Full interview on founding Mighty Buildings, raising capital, and building in construction tech</div>
       </a>
-      <a href="https://startupfundraising.com/library/articles/alexey-dubov" class="media-card" target="_blank">
+      <a href="https://startupfundraising.com/library/articles/alexey-dubov" class="media-card" target="_blank" rel="noopener">
         <span class="media-type podcast">Podcast</span>
         <h4>From Moscow to Mighty Buildings: The Fundraising Story</h4>
         <div class="outlet">Startup Fundraising Podcast</div>
         <div class="media-date">Deep dive on the journey from university startup founder to 6x entrepreneur</div>
       </a>
-      <a href="https://www.voxelmatters.com/mighty-buildings-the-california-way/" class="media-card" target="_blank">
+      <a href="https://www.voxelmatters.com/mighty-buildings-the-california-way/" class="media-card" target="_blank" rel="noopener">
         <span class="media-type press">Interview</span>
         <h4>Mighty Buildings, the California Way</h4>
         <div class="outlet">VoxelMatters</div>
         <div class="media-date">Mar 2023. On 3D printing technology, material science, and scaling globally</div>
       </a>
-      <a href="https://thetechtribune.com/alexey-dubov-of-mighty-buildings/" class="media-card" target="_blank">
+      <a href="https://thetechtribune.com/alexey-dubov-of-mighty-buildings/" class="media-card" target="_blank" rel="noopener">
         <span class="media-type press">Interview</span>
         <h4>Alexey Dubov of Mighty Buildings</h4>
         <div class="outlet">The Tech Tribune</div>
         <div class="media-date">Nov 2021. On Mighty Buildings' vision and approach to sustainable construction</div>
       </a>
-      <a href="https://www.foundamental.com/perspectives/mighty-buildings---3d-printing-homes-in-a-factory" class="media-card" target="_blank">
+      <a href="https://www.foundamental.com/perspectives/mighty-buildings---3d-printing-homes-in-a-factory" class="media-card" target="_blank" rel="noopener">
         <span class="media-type press">Deep Dive</span>
         <h4>Mighty Buildings &mdash; 3D Printing Homes in a Factory</h4>
         <div class="outlet">Foundamental</div>
         <div class="media-date">Comprehensive profile on the technology, regulatory strategy, and scaling approach</div>
       </a>
-      <a href="https://www.youtube.com/watch?v=Y1htuYdhWDA" class="media-card" target="_blank">
+      <a href="https://www.youtube.com/watch?v=Y1htuYdhWDA" class="media-card" target="_blank" rel="noopener">
         <span class="media-type webinar">Webinar</span>
         <h4>Building a Construction Company in the 21st Century</h4>
         <div class="outlet">UNB OCRC Webinar Series</div>
         <div class="media-date">Jan 2024. Delivering 60+ buildings globally, factories in the US and Mexico</div>
       </a>
-      <a href="https://kitecompliance.ai/navigating-compliance/ai-for-prefab-compliance-without-the-hype" class="media-card" target="_blank">
+      <a href="https://kitecompliance.ai/navigating-compliance/ai-for-prefab-compliance-without-the-hype" class="media-card" target="_blank" rel="noopener">
         <span class="media-type webinar">Webinar</span>
         <h4>AI for Prefab Compliance, Without the Hype</h4>
         <div class="outlet">Kite Compliance</div>
         <div class="media-date">Apr 2026. Panel with Brian Chen (Kite) and Steve Glenn (Plant Prefab)</div>
       </a>
     </div>
-
     <div class="year-divider">Press &amp; media mentions</div>
     <div class="media-grid">
-      <a href="https://www.forbes.com/sites/afdhelaziz/2021/12/13/how-mighty-buildings-is-transforming-home-construction-with-robotics-to-address-the-climate-crisis-and-housing-affordability/" class="media-card" target="_blank">
+      <a href="https://www.forbes.com/sites/afdhelaziz/2021/12/13/how-mighty-buildings-is-transforming-home-construction-with-robotics-to-address-the-climate-crisis-and-housing-affordability/" class="media-card" target="_blank" rel="noopener">
         <span class="media-type press">Forbes</span>
         <h4>How Mighty Buildings Is Transforming Home Construction With Robotics</h4>
         <div class="outlet">Forbes &middot; Afdhel Aziz</div>
         <div class="media-date">Dec 2021. On addressing the climate crisis and housing affordability</div>
       </a>
-      <a href="https://www.forbes.com/sites/sarahgoehrke/2021/02/09/mighty-buildings-raises-40-million-for-sustainable-certified-3d-printed-housing/" class="media-card" target="_blank">
+      <a href="https://www.forbes.com/sites/sarahgoehrke/2021/02/09/mighty-buildings-raises-40-million-for-sustainable-certified-3d-printed-housing/" class="media-card" target="_blank" rel="noopener">
         <span class="media-type press">Forbes</span>
         <h4>Mighty Buildings Raises $40M For Sustainable, Certified 3D Printed Housing</h4>
         <div class="outlet">Forbes &middot; Sarah Goehrke</div>
         <div class="media-date">Feb 2021. Series B announcement and technology overview</div>
       </a>
-      <a href="https://www.forbes.com/sites/nataliakarayaneva/2023/02/23/top-5-tech-trends-transforming-real-estate-in-2023/" class="media-card" target="_blank">
-        <span class="media-type press">Forbes</span>
-        <h4>Top 5 Tech Trends Transforming Real Estate In 2023</h4>
-        <div class="outlet">Forbes &middot; Natalia Karayaneva</div>
-        <div class="media-date">Feb 2023. Quoted on cost-efficient solutions and new materials traction</div>
-      </a>
-      <a href="https://builtworlds.com/news/can-construction-tech-solve-affordable-housing-crisis/" class="media-card" target="_blank">
-        <span class="media-type press">BuiltWorlds</span>
-        <h4>Can Construction Tech Solve the Affordable Housing Crisis?</h4>
-        <div class="outlet">BuiltWorlds</div>
-        <div class="media-date">Panel feature on modularization and prefabrication impact</div>
-      </a>
-      <a href="https://housinginnovationsummit.com/speaker/alexey-dubov" class="media-card" target="_blank">
+      <a href="https://housinginnovationsummit.com/speaker/alexey-dubov" class="media-card" target="_blank" rel="noopener">
         <span class="media-type speaking">Speaking</span>
         <h4>Housing Innovation Summit</h4>
         <div class="outlet">Speaker</div>
         <div class="media-date">On sustainable building practices and construction innovation</div>
       </a>
-      <a href="https://additivemanufacturing.com/2023/03/23/sxsw-additive-manufacturing-wrap-up/" class="media-card" target="_blank">
+      <a href="https://additivemanufacturing.com/2023/03/23/sxsw-additive-manufacturing-wrap-up/" class="media-card" target="_blank" rel="noopener">
         <span class="media-type speaking">Speaking</span>
         <h4>SXSW &mdash; Construction 3D Printing Panel</h4>
         <div class="outlet">SXSW 2023</div>
         <div class="media-date">Mar 2023. On additive manufacturing in construction</div>
       </a>
-      <a href="https://bricks-bytes.com/newsletter/icymi-gecko-robotics-reality-capture-and-ais-architectural-impact/" class="media-card" target="_blank">
-        <span class="media-type podcast">Podcast</span>
-        <h4>Bricks &amp; Bytes Podcast</h4>
-        <div class="outlet">Bricks &amp; Bytes</div>
-        <div class="media-date">On Mighty Buildings, robotics in construction, and the future of prefab</div>
-      </a>
-      <a href="https://www.unb.ca/ocrc/_assets/documents/webinar-building-a-construction-company.pdf" class="media-card" target="_blank">
-        <span class="media-type webinar">Webinar</span>
-        <h4>Building a Construction Company in the 21st Century</h4>
-        <div class="outlet">UNB Ocean Construction Research Centre</div>
-        <div class="media-date">Mighty Buildings story, BuildTech intro, and case studies</div>
-      </a>
     </div>
-
     <div class="year-divider">Publications &amp; standards</div>
     <div class="media-grid">
-      <a href="https://www.astm.org/stp163720200102.html" class="media-card" target="_blank">
+      <a href="https://www.astm.org/stp163720200102.html" class="media-card" target="_blank" rel="noopener">
         <span class="media-type press">ASTM Publication</span>
         <h4>3D-Printed Structures with Continuous Fibers to Eliminate Steel Reinforcement</h4>
         <div class="outlet">ASTM International</div>
         <div class="media-date">On capabilities of 3D-printed structures in residential buildings</div>
       </a>
-      <a href="https://www.astm.org/stp163720200103.html" class="media-card" target="_blank">
+      <a href="https://www.astm.org/stp163720200103.html" class="media-card" target="_blank" rel="noopener">
         <span class="media-type press">ASTM Publication</span>
         <h4>Material Development Standards for Additive Manufacturing in Construction</h4>
         <div class="outlet">ASTM International &middot; 2022</div>
@@ -1121,66 +1225,66 @@
 </section>
 
 <!-- Videos -->
-<section id="videos">
+<section id="videos" aria-label="Video presentations">
   <div class="container">
     <span class="section-label">Videos</span>
     <h2 class="section-title">Watch me present</h2>
     <p class="section-desc">Talks, interviews, and panels on construction tech, 3D printing, robotics, and building companies in domains that don't exist yet.</p>
     <div class="video-grid">
-      <a href="https://www.youtube.com/watch?v=IqzNO1e_3Go" class="video-card" target="_blank">
+      <a href="https://www.youtube.com/watch?v=IqzNO1e_3Go" class="video-card" target="_blank" rel="noopener">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/IqzNO1e_3Go/maxresdefault.jpg" alt="BitBuilders Podcast">
-          <div class="video-play">&#9654;</div>
+          <img src="images/yt-IqzNO1e_3Go.jpg" alt="BitBuilders Podcast episode thumbnail" width="320" height="180" loading="lazy">
+          <div class="video-play" aria-hidden="true">&#9654;</div>
         </div>
         <div class="video-info">
           <h4>3D Printing Homes: How Mighty Buildings Is Doing It</h4>
           <div class="outlet">BitBuilders Podcast</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/live/MRW0r-qz9Rs" class="video-card" target="_blank">
+      <a href="https://www.youtube.com/live/MRW0r-qz9Rs" class="video-card" target="_blank" rel="noopener">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/MRW0r-qz9Rs/maxresdefault.jpg" alt="3D Printed Material">
-          <div class="video-play">&#9654;</div>
+          <img src="images/yt-MRW0r-qz9Rs.jpg" alt="Interview on 3D printed materials" width="320" height="180" loading="lazy">
+          <div class="video-play" aria-hidden="true">&#9654;</div>
         </div>
         <div class="video-info">
           <h4>This 3D Printed Material is Stronger than Concrete</h4>
           <div class="outlet">YouTube Interview</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=Y1htuYdhWDA" class="video-card" target="_blank">
+      <a href="https://www.youtube.com/watch?v=Y1htuYdhWDA" class="video-card" target="_blank" rel="noopener">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/Y1htuYdhWDA/maxresdefault.jpg" alt="UNB Webinar">
-          <div class="video-play">&#9654;</div>
+          <img src="images/yt-Y1htuYdhWDA.jpg" alt="UNB webinar on building a construction company" width="320" height="180" loading="lazy">
+          <div class="video-play" aria-hidden="true">&#9654;</div>
         </div>
         <div class="video-info">
           <h4>Building a Construction Company in the 21st Century</h4>
           <div class="outlet">UNB OCRC Webinar</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=1gL4EYDsLbk" class="video-card" target="_blank">
+      <a href="https://www.youtube.com/watch?v=1gL4EYDsLbk" class="video-card" target="_blank" rel="noopener">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/1gL4EYDsLbk/maxresdefault.jpg" alt="TV Interview">
-          <div class="video-play">&#9654;</div>
+          <img src="images/yt-1gL4EYDsLbk.jpg" alt="TV interview on Mighty Buildings" width="320" height="180" loading="lazy">
+          <div class="video-play" aria-hidden="true">&#9654;</div>
         </div>
         <div class="video-info">
           <h4>Mighty Buildings is 3D Printing Houses to Help Two Crises</h4>
           <div class="outlet">TV Interview</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=tyZfuquE6Cw" class="video-card" target="_blank">
+      <a href="https://www.youtube.com/watch?v=tyZfuquE6Cw" class="video-card" target="_blank" rel="noopener">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/tyZfuquE6Cw/maxresdefault.jpg" alt="Mighty Buildings Interview">
-          <div class="video-play">&#9654;</div>
+          <img src="images/yt-tyZfuquE6Cw.jpg" alt="Mighty Buildings interview on 3D printed houses" width="320" height="180" loading="lazy">
+          <div class="video-play" aria-hidden="true">&#9654;</div>
         </div>
         <div class="video-info">
           <h4>3D Printed Houses: Mighty Buildings Interview</h4>
           <div class="outlet">YouTube</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=8Nzr9uYZPqw" class="video-card" target="_blank">
+      <a href="https://www.youtube.com/watch?v=8Nzr9uYZPqw" class="video-card" target="_blank" rel="noopener">
         <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/8Nzr9uYZPqw/maxresdefault.jpg" alt="3D Printed Houses in 24 Hours">
-          <div class="video-play">&#9654;</div>
+          <img src="images/yt-8Nzr9uYZPqw.jpg" alt="3D printed houses built in 24 hours" width="320" height="180" loading="lazy">
+          <div class="video-play" aria-hidden="true">&#9654;</div>
         </div>
         <div class="video-info">
           <h4>3D Printed Houses in Just 24 Hours</h4>
@@ -1192,7 +1296,7 @@
 </section>
 
 <!-- Philosophy / Principles -->
-<section class="philosophy" id="philosophy">
+<section class="philosophy" id="philosophy" aria-label="Principles">
   <div class="container">
     <span class="section-label">Principles</span>
     <h2 class="section-title">How I think</h2>
@@ -1237,22 +1341,24 @@
 </section>
 
 <!-- Contact -->
-<section class="contact" id="contact">
+<section class="contact" id="contact" aria-label="Contact">
   <div class="container">
     <span class="section-label">Contact</span>
     <h2 class="section-title">Let's build something</h2>
     <p class="section-desc" style="margin: 0 auto;">I work with founders, builders, and innovators on hard problems in the built world. If you're working on something that doesn't exist yet, I'd like to hear about it.</p>
     <div class="contact-links">
-      <a href="mailto:alexey@buildtech.vc" class="contact-link primary">Email Me</a>
-      <a href="https://www.linkedin.com/in/alekseydubov" class="contact-link" target="_blank">LinkedIn</a>
-      <a href="https://www.buildtech.vc" class="contact-link" target="_blank">BuildTech Ventures</a>
-      <a href="https://www.echofuturematter.com" class="contact-link" target="_blank">Echoes of Future Matter</a>
+      <a href="mailto:alexey@buildtech.vc" class="contact-link primary" data-plausible-event="cta-contact">Email Me</a>
+      <a href="https://www.linkedin.com/in/alekseydubov" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.buildtech.vc" class="contact-link" target="_blank" rel="noopener">BuildTech Ventures</a>
+      <a href="https://www.echofuturematter.com" class="contact-link" target="_blank" rel="noopener">Echoes of Future Matter</a>
     </div>
   </div>
 </section>
 
+</main>
+
 <!-- Footer -->
-<footer>
+<footer role="contentinfo">
   <p>&copy; 2026 Alexey Dubov &middot; San Francisco Bay Area &middot; <a href="mailto:alexey@buildtech.vc">alexey@buildtech.vc</a></p>
 </footer>
 
