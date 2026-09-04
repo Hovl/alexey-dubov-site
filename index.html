@@ -588,6 +588,71 @@
       background: #3a3ae8;
     }
 
+    /* Videos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .video-card {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+    .video-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .video-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--dark-navy);
+      overflow: hidden;
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+    .video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      background: rgba(74, 74, 251, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.2rem;
+    }
+    .video-info {
+      padding: 1.2rem 1.5rem;
+    }
+    .video-info h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dark-navy);
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+    .video-info .outlet {
+      color: var(--med-gray);
+      font-size: 0.85rem;
+    }
+
     /* Footer */
     footer {
       background: var(--dark-navy);
@@ -631,6 +696,7 @@
       <a href="#portfolio">Portfolio</a>
       <a href="#writing">Writing</a>
       <a href="#media">Media</a>
+      <a href="#videos">Videos</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -667,10 +733,6 @@
     <div class="cred-item">
       <span class="num">60+</span>
       <span class="label">Buildings Delivered</span>
-    </div>
-    <div class="cred-item">
-      <span class="num">15K+</span>
-      <span class="label">LinkedIn Followers</span>
     </div>
   </div>
 </section>
@@ -764,7 +826,6 @@
         <p>Cultural research laboratory exploring materiality and design futures. Exhibitions, panels, and interviews at the intersection of architecture, design, and emerging technologies. Co-founded with Andrei Hakhovich.</p>
       </div>
       <div class="venture-card">
-        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/6756397aa66351f5b44c56c0_Jack.png" alt="Glance Clock" class="venture-logo light-filter">
         <h3>Glance Clock</h3>
         <div class="role">Co-Founder &middot; COO &middot; 2016 &ndash; 2020</div>
         <p>Smart wall clock that shows contextual information from your apps. Calendar, weather, calls, voice assistant responses. Built in Singapore, shipped 3,000+ units. Acquired by NeXtime.</p>
@@ -781,6 +842,7 @@
         <p>Digital content distribution kiosks for retail. You'd walk into a store, pick a movie or game, and get it on physical media in three to five minutes. Launched in Moscow, expanded to Germany. Presented at Gamescom 2009. Pioneered on-demand content before streaming took over.</p>
       </div>
       <div class="venture-card">
+        <img src="https://cdn.prod.website-files.com/63f5155587a0406a0fc4cbc2/6756397aa66351f5b44c56c0_Jack.png" alt="RuJack" class="venture-logo light-filter">
         <h3>RuJack</h3>
         <div class="role">Co-Founder &middot; CTO</div>
         <p>Hardware technology venture. Acquired by LG Electronics.</p>
@@ -1053,6 +1115,77 @@
         <h4>Material Development Standards for Additive Manufacturing in Construction</h4>
         <div class="outlet">ASTM International &middot; 2022</div>
         <div class="media-date">A model for quality in AM from material development to completion</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Videos -->
+<section id="videos">
+  <div class="container">
+    <span class="section-label">Videos</span>
+    <h2 class="section-title">Watch me present</h2>
+    <p class="section-desc">Talks, interviews, and panels on construction tech, 3D printing, robotics, and building companies in domains that don't exist yet.</p>
+    <div class="video-grid">
+      <a href="https://www.youtube.com/watch?v=IqzNO1e_3Go" class="video-card" target="_blank">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/IqzNO1e_3Go/maxresdefault.jpg" alt="BitBuilders Podcast">
+          <div class="video-play">&#9654;</div>
+        </div>
+        <div class="video-info">
+          <h4>3D Printing Homes: How Mighty Buildings Is Doing It</h4>
+          <div class="outlet">BitBuilders Podcast</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/live/MRW0r-qz9Rs" class="video-card" target="_blank">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/MRW0r-qz9Rs/maxresdefault.jpg" alt="3D Printed Material">
+          <div class="video-play">&#9654;</div>
+        </div>
+        <div class="video-info">
+          <h4>This 3D Printed Material is Stronger than Concrete</h4>
+          <div class="outlet">YouTube Interview</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=Y1htuYdhWDA" class="video-card" target="_blank">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/Y1htuYdhWDA/maxresdefault.jpg" alt="UNB Webinar">
+          <div class="video-play">&#9654;</div>
+        </div>
+        <div class="video-info">
+          <h4>Building a Construction Company in the 21st Century</h4>
+          <div class="outlet">UNB OCRC Webinar</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=1gL4EYDsLbk" class="video-card" target="_blank">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/1gL4EYDsLbk/maxresdefault.jpg" alt="TV Interview">
+          <div class="video-play">&#9654;</div>
+        </div>
+        <div class="video-info">
+          <h4>Mighty Buildings is 3D Printing Houses to Help Two Crises</h4>
+          <div class="outlet">TV Interview</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=tyZfuquE6Cw" class="video-card" target="_blank">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/tyZfuquE6Cw/maxresdefault.jpg" alt="Mighty Buildings Interview">
+          <div class="video-play">&#9654;</div>
+        </div>
+        <div class="video-info">
+          <h4>3D Printed Houses: Mighty Buildings Interview</h4>
+          <div class="outlet">YouTube</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=8Nzr9uYZPqw" class="video-card" target="_blank">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/8Nzr9uYZPqw/maxresdefault.jpg" alt="3D Printed Houses in 24 Hours">
+          <div class="video-play">&#9654;</div>
+        </div>
+        <div class="video-info">
+          <h4>3D Printed Houses in Just 24 Hours</h4>
+          <div class="outlet">YouTube</div>
+        </div>
       </a>
     </div>
   </div>
