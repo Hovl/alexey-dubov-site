@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexey Dubov | Building the Future of the Built World</title>
+  <meta name="description" content="6x Startup Founder, Angel Investor, and Managing Partner at BuildTech Ventures. Building frontier technology companies — from concept to the first proof.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #4A4AFB;
+      --dark-navy: #1C2B44;
+      --gold: #E8A121;
+      --white: #FFFFFF;
+      --off-white: #F8F8F8;
+      --light-gray: #E0E0E0;
+      --dark-gray: #222222;
+      --med-gray: #666666;
+      --warm-gray: #4B5563;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--dark-gray);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(28, 43, 68, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    /* Hero */
+    .hero {
+      background: var(--dark-navy);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(74, 74, 251, 0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 20%, rgba(232, 161, 33, 0.08) 0%, transparent 50%);
+      animation: drift 20s ease-in-out infinite;
+    }
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-2%, 1%); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .hero-pill {
+      display: inline-block;
+      background: var(--primary-blue);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--primary-blue);
+      color: var(--white);
+      padding: 0.9rem 2.4rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(74, 74, 251, 0.3);
+    }
+
+    /* Section base */
+    section { padding: 6rem 2rem; }
+    .section-label {
+      display: inline-block;
+      background: var(--primary-blue);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--dark-navy);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--med-gray);
+      font-size: 1.05rem;
+      max-width: 650px;
+      line-height: 1.7;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* Focus Areas */
+    .focus { background: var(--off-white); }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .focus-card {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      padding: 2.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .focus-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .focus-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+    }
+    .focus-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 0.75rem;
+    }
+    .focus-card p {
+      color: var(--med-gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .portfolio-card {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      padding: 1.8rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .portfolio-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--dark-navy);
+      margin-bottom: 0.4rem;
+    }
+    .portfolio-tag {
+      display: inline-block;
+      background: rgba(74, 74, 251, 0.08);
+      color: var(--primary-blue);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .portfolio-stage {
+      font-size: 0.8rem;
+      color: var(--med-gray);
+      margin-top: 0.5rem;
+    }
+
+    /* Ventures / Companies */
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .venture-card {
+      background: var(--dark-navy);
+      border-radius: 8px;
+      padding: 2.5rem;
+      color: var(--white);
+      transition: transform 0.2s;
+    }
+    .venture-card:hover {
+      transform: translateY(-3px);
+    }
+    .venture-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .venture-card .role {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .venture-card p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Philosophy */
+    .philosophy {
+      background: var(--off-white);
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .phil-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .phil-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+    .phil-item h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 0.4rem;
+    }
+    .phil-item p {
+      color: var(--med-gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Writing */
+    .writing-list {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .writing-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .writing-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .writing-item h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      color: var(--dark-navy);
+      font-size: 1rem;
+    }
+    .writing-item .date {
+      color: var(--med-gray);
+      font-size: 0.8rem;
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+    .writing-item .arrow {
+      color: var(--primary-blue);
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+
+    /* Credentials bar */
+    .credentials {
+      background: var(--dark-navy);
+      padding: 4rem 2rem;
+    }
+    .credentials-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .cred-item .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .cred-item .label {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--white);
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      border: 2px solid var(--light-gray);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--dark-navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .contact-link:hover {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+    }
+    .contact-link.primary {
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      color: var(--white);
+    }
+    .contact-link.primary:hover {
+      background: #3a3ae8;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-navy);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .focus-grid, .ventures-grid, .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 6rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Alexey <span>Dubov</span></a>
+    <div class="nav-links">
+      <a href="#focus">Focus</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#writing">Writing</a>
+      <a href="#philosophy">Principles</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-pill">Deep Tech &middot; Built World &middot; Frontier Ventures</div>
+    <h1>I build frontier technology companies &mdash; <em>from concept to the first proof</em></h1>
+    <p class="hero-subtitle">
+      6x founder with 2 exits. Managing Partner at BuildTech Ventures. Most of my career has been spent in domains that didn't exist yet: 3D-printed construction materials, robotics automation, AI-enabled compliance, spatial computing.
+    </p>
+    <a href="#contact" class="hero-cta">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Credentials Bar -->
+<section class="credentials">
+  <div class="credentials-grid">
+    <div class="cred-item">
+      <span class="num">6</span>
+      <span class="label">Companies Founded</span>
+    </div>
+    <div class="cred-item">
+      <span class="num">$200M+</span>
+      <span class="label">Capital Raised</span>
+    </div>
+    <div class="cred-item">
+      <span class="num">15+</span>
+      <span class="label">Years Building</span>
+    </div>
+    <div class="cred-item">
+      <span class="num">20+</span>
+      <span class="label">Portfolio Companies</span>
+    </div>
+  </div>
+</section>
+
+<!-- How I Can Help -->
+<section class="focus" id="focus">
+  <div class="container">
+    <span class="section-label">Focus</span>
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-desc">I work with early-stage teams on the evaluation and de-risking phase — the part that determines whether a moonshot-level idea is worth pursuing at all.</p>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-card-icon">&#9670;</div>
+        <h3>Venture Capital</h3>
+        <p>Through BuildTech Ventures, I invest in early-stage companies transforming construction and real estate through technology. We focus on software, hardware, advanced materials, and sustainability within the built environment. Typical check: $1M–$10M at Pre-Seed through Series A.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card-icon">&#9671;</div>
+        <h3>Frontier Innovation</h3>
+        <p>I've taken ideas from unproven concept to first-in-the-world certifications — photopolymer composites replacing steel rebar, UL-listed 3D-printed building elements, co-authored standards with UL, ASTM, and ISO. That process — moving fast on hard problems across physics, chemistry, manufacturing, and regulation simultaneously — is what I do best.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card-icon">&#9672;</div>
+        <h3>Cultural Laboratory</h3>
+        <p>As co-founder of Echoes of Future Matter, I explore how materials, storytelling, and emerging technologies shape our future spaces. EoFM is a cultural and artistic research platform — exhibitions, panels, and interviews at the intersection of design, technology, and material innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ventures -->
+<section id="ventures">
+  <div class="container">
+    <span class="section-label">Ventures</span>
+    <h2 class="section-title">Companies I've Built</h2>
+    <p class="section-desc">From robotics to 3D-printed construction to venture capital — each venture has been about pushing the frontier of what's possible in the built world.</p>
+    <div class="ventures-grid">
+      <div class="venture-card">
+        <h3>BuildTech Ventures</h3>
+        <div class="role">Managing Partner &middot; 2021 – Present</div>
+        <p>Venture capital group investing in the future of the built environment. Construction tech, real estate tech, robotics, climate tech, and advanced materials. Based in San Mateo, California.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Mighty Buildings</h3>
+        <div class="role">Co-Founder &middot; CIO / COO &middot; 2018 – 2025</div>
+        <p>Revolutionized construction through 3D printing and robotics. Took a materials science hypothesis from unproven concept to the first UL-listed 3D-printed building elements in the world. $200M+ raised, 60+ buildings delivered, co-authored UL3401 and ISO/ASTM 52939. YC W18.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Echoes of Future Matter</h3>
+        <div class="role">Co-Founder &middot; 2025 – Present</div>
+        <p>Cultural and artistic research laboratory exploring materiality and design futures. Co-founded with Andrei Hakhovich. Exhibitions, panels, and events at the intersection of architecture, design, and emerging technologies.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Kite Compliance</h3>
+        <div class="role">Independent Director &middot; 2026 – Present</div>
+        <p>AI-powered compliance automation for the built environment. Helping prefab and construction teams navigate regulatory complexity without the hype.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="focus" id="portfolio">
+  <div class="container">
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">Key Investments</h2>
+    <p class="section-desc">Selected companies from the BuildTech Ventures portfolio — each pushing the frontier of construction, real estate, and the built environment.</p>
+    <div class="portfolio-grid">
+      <a href="https://www.buildtech.vc/portfolio/kite-compliance" class="portfolio-card" target="_blank">
+        <h4>Kite Compliance</h4>
+        <span class="portfolio-tag">AI</span><span class="portfolio-tag">Energy</span>
+        <div class="portfolio-stage">2026 · Pre-Seed</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/rem-brain" class="portfolio-card" target="_blank">
+        <h4>Rem Brain</h4>
+        <span class="portfolio-tag">Robotics</span>
+        <div class="portfolio-stage">2025 · Pre-Seed</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/higharc" class="portfolio-card" target="_blank">
+        <h4>Higharc</h4>
+        <span class="portfolio-tag">Automated Design</span>
+        <div class="portfolio-stage">2024 · Series B</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/hywatts" class="portfolio-card" target="_blank">
+        <h4>HyWatts</h4>
+        <span class="portfolio-tag">New Energy</span>
+        <div class="portfolio-stage">2024 · Pre-Seed</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/beam" class="portfolio-card" target="_blank">
+        <h4>Beam</h4>
+        <span class="portfolio-tag">M&A</span><span class="portfolio-tag">Payments</span>
+        <div class="portfolio-stage">2023 · Seed</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/bundle" class="portfolio-card" target="_blank">
+        <h4>Bundle</h4>
+        <span class="portfolio-tag">Marketplace</span><span class="portfolio-tag">Procurement</span>
+        <div class="portfolio-stage">2023 · Seed</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/tangible-materials" class="portfolio-card" target="_blank">
+        <h4>Tangible Materials</h4>
+        <span class="portfolio-tag">CO2 Reduction</span>
+        <div class="portfolio-stage">2023 · Seed</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/rise" class="portfolio-card" target="_blank">
+        <h4>Rise</h4>
+        <span class="portfolio-tag">Sustainability</span>
+        <div class="portfolio-stage">2023 · Series A</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/wreno" class="portfolio-card" target="_blank">
+        <h4>Wreno</h4>
+        <span class="portfolio-tag">AI/ML</span><span class="portfolio-tag">Marketplace</span>
+        <div class="portfolio-stage">2023 · Seed</div>
+      </a>
+      <a href="https://www.buildtech.vc/portfolio/arx" class="portfolio-card" target="_blank">
+        <h4>ARX</h4>
+        <span class="portfolio-tag">Data Insights</span>
+        <div class="portfolio-stage">2023 · Seed</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Writing -->
+<section id="writing">
+  <div class="container">
+    <span class="section-label">Writing</span>
+    <h2 class="section-title">Recent Thinking</h2>
+    <p class="section-desc">Articles and perspectives on the frontier of construction technology, robotics, and the built environment.</p>
+    <div class="writing-list">
+      <a href="https://www.linkedin.com/pulse/air-quality-flywheel-alexey-dubov-ioi7c" class="writing-item" target="_blank">
+        <h4>The Air Quality Flywheel</h4>
+        <span class="date">May 2026</span><span class="arrow">&rarr;</span>
+      </a>
+      <a href="https://www.linkedin.com/pulse/permitting-bottleneck-real-ai-infrastructure-problem-alexey-dubov-9qt0c" class="writing-item" target="_blank">
+        <h4>The Permitting Bottleneck Is the Real AI Infrastructure Problem</h4>
+        <span class="date">May 2026</span><span class="arrow">&rarr;</span>
+      </a>
+      <a href="https://www.linkedin.com/posts/alekseydubov_the-missing-layer-in-teleoperation-cognitive-activity-7477741510298595328-p4up" class="writing-item" target="_blank">
+        <h4>The Missing Layer in Teleoperation: Cognitive State Awareness</h4>
+        <span class="date">Jun 2026</span><span class="arrow">&rarr;</span>
+      </a>
+      <a href="https://www.linkedin.com/posts/alekseydubov_the-robot-in-the-room-why-dexterity-not-activity-7472063498701246464-KVjL" class="writing-item" target="_blank">
+        <h4>The Robot in the Room: Why Dexterity — Not Price — Is the Real Barrier to Automating Construction</h4>
+        <span class="date">Jun 2026</span><span class="arrow">&rarr;</span>
+      </a>
+      <a href="https://www.linkedin.com/posts/alekseydubov_ai-infrastructure-has-a-quality-control-problem-activity-7480882626157371392-BLhX" class="writing-item" target="_blank">
+        <h4>AI Infrastructure Has a Quality Control Problem Nobody's Pricing In</h4>
+        <span class="date">Aug 2026</span><span class="arrow">&rarr;</span>
+      </a>
+      <a href="https://www.forbes.com/councils/forbestechcouncil/2022/12/29/construction-tech-a-tough-nut-to-crack/" class="writing-item" target="_blank">
+        <h4>Construction Tech — A Tough Nut to Crack</h4>
+        <span class="date">Dec 2022 · Forbes</span><span class="arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy / Principles -->
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <span class="section-label">Principles</span>
+    <h2 class="section-title">How I Think</h2>
+    <p class="section-desc">Principles forged through 15+ years of building companies across domains that didn't exist yet.</p>
+    <div class="philosophy-grid">
+      <div>
+        <div class="phil-item">
+          <div class="phil-num">01</div>
+          <h4>Move fast on hard problems</h4>
+          <p>Physics, chemistry, manufacturing, and regulation simultaneously — that's where the real leverage is. The intersection of disciplines is where breakthroughs happen.</p>
+        </div>
+        <div class="phil-item">
+          <div class="phil-num">02</div>
+          <h4>Find customers before you have a product</h4>
+          <p>Understand workflows and pain points first. Make sure your value proposition sits at an intersection customers actually recognize and care about.</p>
+        </div>
+        <div class="phil-item">
+          <div class="phil-num">03</div>
+          <h4>Provide 80% improvement in a digestible slice</h4>
+          <p>Don't try to change everything at once. Deliver transformative improvement within a workflow people already understand.</p>
+        </div>
+      </div>
+      <div>
+        <div class="phil-item">
+          <div class="phil-num">04</div>
+          <h4>Standards are competitive advantages</h4>
+          <p>Co-authoring UL3401 and ISO/ASTM 52939 wasn't compliance work — it was building the moat. Those who shape the rules shape the market.</p>
+        </div>
+        <div class="phil-item">
+          <div class="phil-num">05</div>
+          <h4>Build the proof, then the company</h4>
+          <p>A technically ambitious idea with high uncertainty, a regulatory barrier, and a small team trying to figure out if it can actually work — that's where I thrive.</p>
+        </div>
+        <div class="phil-item">
+          <div class="phil-num">06</div>
+          <h4>Treat matter as meaning</h4>
+          <p>Every material decision carries cultural significance and emotional depth. Technology should deepen — not replace — our connection to materiality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title">Let's Build Something</h2>
+    <p class="section-desc" style="margin: 0 auto;">I work with founders, builders, and innovators pushing the frontier of the built world. If you're working on something hard, I'd like to hear about it.</p>
+    <div class="contact-links">
+      <a href="mailto:alexey@buildtech.vc" class="contact-link primary">Email Me</a>
+      <a href="https://www.linkedin.com/in/alekseydubov" class="contact-link" target="_blank">LinkedIn</a>
+      <a href="https://www.buildtech.vc" class="contact-link" target="_blank">BuildTech Ventures</a>
+      <a href="https://www.echofuturematter.com" class="contact-link" target="_blank">Echoes of Future Matter</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Alexey Dubov &middot; San Francisco Bay Area &middot; <a href="mailto:alexey@buildtech.vc">alexey@buildtech.vc</a></p>
+</footer>
+
+</body>
+</html>
