@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alexey Dubov | 6x Founder, Managing Partner at BuildTech Ventures</title>
-  <meta name="description" content="6x startup founder with 2 exits. Managing Partner at BuildTech Ventures. I build frontier technology companies in construction tech, robotics, and advanced materials.">
+  <meta name="description" content="6x startup founder with 2 exits. Managing Partner at BuildTech Ventures. I build frontier technology companies from concept to the first proof.">
   <link rel="canonical" href="https://hovl.github.io/alexey-dubov-site/">
 
   <!-- Open Graph -->
@@ -31,7 +31,7 @@
     "image": "https://hovl.github.io/alexey-dubov-site/images/alexey-dubov.png",
     "jobTitle": "Managing Partner",
     "worksFor": {"@type": "Organization", "name": "BuildTech Ventures", "url": "https://www.buildtech.vc"},
-    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Bauman Moscow State Technical University"},
+    "alumniOf": {"@type": "CollegeUniversity", "name": "Bauman Moscow State Technical University"},
     "description": "6x startup founder with 2 exits. Building frontier technology companies in construction tech, robotics, and advanced materials.",
     "sameAs": ["https://www.linkedin.com/in/alekseydubov", "https://www.buildtech.vc", "https://www.echofuturematter.com"],
     "knowsAbout": ["Construction Technology", "Robotics", "3D Printing", "Advanced Materials", "Venture Capital", "Climate Tech"]
@@ -118,21 +118,30 @@
       width: 160px; height: 160px; border-radius: 50%;
       object-fit: cover; border: 3px solid rgba(255,255,255,0.15); margin-bottom: 2rem;
     }
-    .hero-pill {
-      display: inline-block; background: var(--primary-blue); color: var(--white);
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 0.4rem 1.2rem;
-      border-radius: 50px; margin-bottom: 2rem;
-    }
     .hero h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 700;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 700;
       color: var(--white); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem;
     }
     .hero h1 em { font-style: normal; color: var(--gold); }
     .hero-subtitle {
-      font-size: 1.1rem; color: rgba(255,255,255,0.6);
-      line-height: 1.6; max-width: 550px; margin: 0 auto 2.5rem; font-weight: 300;
+      font-size: 1.15rem; color: rgba(255,255,255,0.6);
+      line-height: 1.7; max-width: 580px; margin: 0 auto 2.5rem; font-weight: 300;
+    }
+    .hero-creds {
+      display: flex; justify-content: center; gap: 2.5rem;
+      margin-bottom: 3rem; flex-wrap: wrap;
+    }
+    .hero-cred {
+      text-align: center;
+    }
+    .hero-cred .num {
+      font-family: 'Space Grotesk', sans-serif; font-size: 2rem;
+      font-weight: 700; color: var(--gold); display: block;
+    }
+    .hero-cred .label {
+      color: rgba(255,255,255,0.5); font-size: 0.75rem; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-top: 0.15rem;
     }
     .hero-cta {
       display: inline-block; background: var(--primary-blue); color: var(--white);
@@ -167,55 +176,46 @@
     }
     .container { max-width: 1200px; margin: 0 auto; }
 
-    /* Focus */
-    .focus { background: var(--off-white); }
-    .focus-grid {
+    /* Narrative section */
+    .narrative { background: var(--white); }
+    .narrative-block {
+      max-width: 720px; margin: 0 auto 3rem;
+    }
+    .narrative-block:last-child { margin-bottom: 0; }
+    .narrative-block h3 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem;
+      font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
+    }
+    .narrative-block p {
+      color: var(--warm-gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem;
+    }
+    .narrative-block p:last-child { margin-bottom: 0; }
+
+    /* Principles */
+    .principles { background: var(--off-white); }
+    .principles-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem; margin-top: 3rem;
     }
-    .focus-card {
-      background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 8px; padding: 2.5rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .principle-card {
+      background: var(--white); border-left: 3px solid var(--primary-blue);
+      padding: 2rem 2rem 2rem 2.5rem; border-radius: 0 8px 8px 0;
     }
-    .focus-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-    .focus-card-icon {
-      width: 48px; height: 48px; background: var(--primary-blue);
-      border-radius: 10px; display: flex; align-items: center;
-      justify-content: center; margin-bottom: 1.5rem; font-size: 1.4rem; color: var(--white);
-    }
-    .focus-card h3 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem;
+    .principle-card h3 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem;
       font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
     }
-    .focus-card p { color: var(--med-gray); font-size: 0.95rem; line-height: 1.7; }
-
-    /* Portfolio */
-    .portfolio-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
+    .principle-card p {
+      color: var(--med-gray); font-size: 0.95rem; line-height: 1.7;
     }
-    .portfolio-card {
-      background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 8px; padding: 1.8rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none; color: inherit; display: block;
+    .principle-card blockquote {
+      border-left: none; margin: 0.75rem 0 0; padding: 0;
+      font-style: italic; color: var(--warm-gray); font-size: 0.9rem; line-height: 1.6;
     }
-    .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-    .portfolio-logo { height: 32px; width: auto; margin-bottom: 0.8rem; object-fit: contain; }
-    .portfolio-card h4 {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-      font-size: 1.1rem; color: var(--dark-navy); margin-bottom: 0.3rem;
+    .principle-card .source {
+      font-style: normal; font-size: 0.75rem; color: var(--med-gray);
+      display: block; margin-top: 0.3rem;
     }
-    .portfolio-card .portfolio-desc {
-      color: var(--med-gray); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.5rem;
-    }
-    .portfolio-tag {
-      display: inline-block; background: rgba(74, 74, 251, 0.08); color: var(--primary-blue);
-      font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem;
-      border-radius: 4px; margin-right: 0.3rem; margin-bottom: 0.3rem;
-    }
-    .portfolio-stage { font-size: 0.8rem; color: var(--med-gray); margin-top: 0.5rem; }
 
     /* Ventures */
     .ventures-grid {
@@ -242,8 +242,71 @@
     }
     .venture-card p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
 
-    /* Writing / Insights */
-    .writing-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; }
+    /* Portfolio */
+    .focus { background: var(--off-white); }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .portfolio-card {
+      background: var(--white); border: 1px solid var(--light-gray);
+      border-radius: 8px; padding: 1.8rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .portfolio-logo { height: 32px; width: auto; margin-bottom: 0.8rem; object-fit: contain; }
+    .portfolio-card h4 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 1.1rem; color: var(--dark-navy); margin-bottom: 0.3rem;
+    }
+    .portfolio-card .portfolio-desc {
+      color: var(--med-gray); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.5rem;
+    }
+    .portfolio-tag {
+      display: inline-block; background: rgba(74, 74, 251, 0.08); color: var(--primary-blue);
+      font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem;
+      border-radius: 4px; margin-right: 0.3rem; margin-bottom: 0.3rem;
+    }
+    .portfolio-stage { font-size: 0.8rem; color: var(--med-gray); margin-top: 0.5rem; }
+
+    /* Proof section — standards, writing, media */
+    .proof-section { background: var(--white); }
+    .proof-subsection { margin-bottom: 3rem; }
+    .proof-subsection:last-child { margin-bottom: 0; }
+    .proof-subsection h3 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem;
+      font-weight: 700; color: var(--dark-navy); margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--light-gray);
+    }
+
+    /* Standards row */
+    .standards-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .standard-card {
+      background: var(--dark-navy); border-radius: 8px; padding: 2rem; color: var(--white);
+    }
+    .standard-card .standard-label {
+      color: var(--gold); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .standard-card h4 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem;
+      font-weight: 700; margin-bottom: 0.5rem;
+    }
+    .standard-card p {
+      color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.6;
+    }
+    .standard-card a {
+      color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 600;
+      display: inline-block; margin-top: 0.75rem;
+    }
+    .standard-card a:hover { text-decoration: underline; }
+
+    /* Writing list */
+    .writing-list { display: flex; flex-direction: column; gap: 1rem; }
     .writing-item {
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.5rem 2rem; background: var(--white);
@@ -266,17 +329,11 @@
     }
     .writing-item .date { color: var(--med-gray); font-size: 0.8rem; white-space: nowrap; }
     .writing-item .arrow { color: var(--primary-blue); font-size: 1.2rem; }
-    .year-divider {
-      font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem;
-      font-weight: 700; color: var(--primary-blue); letter-spacing: 0.1em;
-      text-transform: uppercase; margin-top: 2rem; margin-bottom: 0.5rem;
-      padding-bottom: 0.5rem; border-bottom: 1px solid var(--light-gray);
-    }
 
-    /* Media grid (compact) */
+    /* Media grid */
     .media-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem; margin-top: 2rem;
+      gap: 1rem;
     }
     .media-item {
       display: flex; align-items: center; gap: 0.8rem;
@@ -294,13 +351,14 @@
     .media-badge.podcast { background: rgba(232, 161, 33, 0.12); color: #B87D00; }
     .media-badge.press { background: rgba(74, 74, 251, 0.08); color: var(--primary-blue); }
     .media-badge.speaking { background: rgba(232, 161, 33, 0.12); color: #B87D00; }
+    .media-badge.standard { background: rgba(74, 74, 251, 0.08); color: var(--primary-blue); }
     .media-item .media-text { font-size: 0.9rem; color: var(--dark-navy); font-weight: 500; }
     .media-item .media-outlet { font-size: 0.75rem; color: var(--med-gray); }
 
     /* Videos */
     .video-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
+      gap: 1.5rem; margin-top: 2rem;
     }
     .video-card {
       background: var(--white); border: 1px solid var(--light-gray);
@@ -326,6 +384,28 @@
     }
     .video-info .outlet { color: var(--med-gray); font-size: 0.85rem; }
 
+    /* Focus cards (looking for) */
+    .focus-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem; margin-top: 3rem;
+    }
+    .focus-card {
+      background: var(--white); border: 1px solid var(--light-gray);
+      border-radius: 8px; padding: 2.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .focus-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .focus-card-icon {
+      width: 48px; height: 48px; background: var(--primary-blue);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 1.5rem; font-size: 1.4rem; color: var(--white);
+    }
+    .focus-card h3 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem;
+      font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
+    }
+    .focus-card p { color: var(--med-gray); font-size: 0.95rem; line-height: 1.7; }
+
     /* Mid-page CTA */
     .mid-cta { background: var(--primary-blue); padding: 4rem 2rem; text-align: center; }
     .mid-cta h2 {
@@ -343,31 +423,6 @@
       font-weight: 600; font-size: 0.9rem; transition: transform 0.2s, box-shadow 0.2s;
     }
     .mid-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-
-    /* Credentials */
-    .credentials { background: var(--dark-navy); padding: 4rem 2rem; }
-    .credentials-grid {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem; text-align: center;
-    }
-    .cred-item .num {
-      font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem;
-      font-weight: 700; color: var(--gold); display: block;
-    }
-    .cred-item .label { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 0.3rem; }
-
-    /* About */
-    .about-grid {
-      display: grid; grid-template-columns: 240px 1fr;
-      gap: 3rem; align-items: start; margin-top: 2.5rem;
-    }
-    .about-photo { width: 100%; border-radius: 8px; object-fit: cover; }
-    .about-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
-    .badge {
-      display: inline-block; background: rgba(74, 74, 251, 0.08); color: var(--primary-blue);
-      font-size: 0.7rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 50px;
-    }
 
     /* Contact */
     .contact { background: var(--white); text-align: center; padding: 6rem 2rem; }
@@ -399,11 +454,11 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       section { padding: 4rem 1.5rem; }
-      .focus-grid, .ventures-grid, .video-grid { grid-template-columns: 1fr; }
+      .focus-grid, .ventures-grid, .video-grid, .standards-grid { grid-template-columns: 1fr; }
       .media-grid { grid-template-columns: 1fr; }
+      .principles-grid { grid-template-columns: 1fr; }
       .hero { padding: 6rem 1.5rem 4rem; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-photo { max-width: 200px; }
+      .hero-creds { gap: 1.5rem; }
       .writing-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .writing-meta { margin-left: 0; }
       .hero-secondary-cta { display: block; margin-left: 0; margin-top: 1rem; }
@@ -418,11 +473,11 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">Alexey <span>Dubov</span></a>
     <div class="nav-links">
-      <a href="#looking-for">Looking For</a>
-      <a href="#about">About</a>
+      <a href="#pattern">The Pattern</a>
+      <a href="#principles">How I Think</a>
       <a href="#ventures">Ventures</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#insights">Insights</a>
+      <a href="#proof">Proof</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -434,34 +489,125 @@
 <section class="hero" aria-label="Introduction">
   <div class="hero-content">
     <img src="images/alexey-dubov.png" alt="Alexey Dubov" class="hero-photo" width="160" height="160">
-    <div class="hero-pill">Deep Tech &middot; Built World &middot; Frontier Ventures</div>
-    <h1>I build frontier technology companies &mdash; <em>from concept to the first proof</em></h1>
+    <h1>I find domains where the technology <em>doesn't exist yet</em> &mdash; and build the first proof</h1>
     <p class="hero-subtitle">
-      6x founder, 2 exits. I take unproven technology in construction, robotics, and advanced materials and make it real.
+      6x founder, 2 exits. Construction, robotics, advanced materials. The pattern is always the same: take something unproven and make it real.
     </p>
+    <div class="hero-creds">
+      <div class="hero-cred">
+        <span class="num">6</span>
+        <span class="label">Companies Founded</span>
+      </div>
+      <div class="hero-cred">
+        <span class="num">$200M+</span>
+        <span class="label">Capital Raised</span>
+      </div>
+      <div class="hero-cred">
+        <span class="num">15+</span>
+        <span class="label">Years Building</span>
+      </div>
+    </div>
     <a href="mailto:alexey@buildtech.vc" class="hero-cta" data-plausible-event="cta-hero">Work With Me</a>
     <a href="images/alexey-dubov-bio.pdf" class="hero-secondary-cta" data-plausible-event="download-bio">Download Bio</a>
   </div>
 </section>
 
-<!-- ===== CREDENTIALS ===== -->
-<section class="credentials" aria-label="Key metrics">
-  <div class="credentials-grid">
-    <div class="cred-item">
-      <span class="num">6</span>
-      <span class="label">Companies Founded</span>
+<!-- ===== THE PATTERN ===== -->
+<section class="narrative" id="pattern" aria-label="The Pattern">
+  <div class="container">
+    <span class="section-label">The Pattern</span>
+    <h2 class="section-title">Same playbook, six companies</h2>
+
+    <div class="narrative-block">
+      <h3>Start with the hard part</h3>
+      <p>I started at Bauman Moscow State Technical University studying robotics. Since then I've founded six companies across Russia, Singapore, Germany, and the US. Two exits: Glance Clock (acquired by NeXtime) and RuJack (acquired by LG Electronics).</p>
+      <p>Every time, the same move: find a domain where the technology doesn't exist yet, build the first working version, prove it's real. Not the product — the proof.</p>
     </div>
-    <div class="cred-item">
-      <span class="num">$200M+</span>
-      <span class="label">Capital Raised</span>
+
+    <div class="narrative-block">
+      <h3>The Mighty Buildings years</h3>
+      <p>At Mighty Buildings (YC W18), I co-led the effort to take photopolymer composites from unproven concept to the first UL-listed 3D-printed building elements in the world. Under a year to first certification. $200M+ raised. 60+ buildings delivered. I co-authored UL3401 and ISO/ASTM 52939 — the global standards that now govern 3D-printed construction.</p>
+      <p>The lesson wasn't about 3D printing. It was about what happens when you move fast on hard problems across physics, chemistry, manufacturing, and regulation simultaneously. That's what I do best.</p>
     </div>
-    <div class="cred-item">
-      <span class="num">15+</span>
-      <span class="label">Years Building</span>
+
+    <div class="narrative-block">
+      <h3>Now I do it at portfolio scale</h3>
+      <p>Through BuildTech Ventures, I back early-stage teams solving real problems in the built environment. Through the Launchpad, I help European construction tech companies land in the US. Through Echoes of Future Matter (co-founded with Andrei Hakhovich), I explore the cultural side of materiality and design futures.</p>
+      <p>Different companies. Same pattern.</p>
     </div>
-    <div class="cred-item">
-      <span class="num">800+</span>
-      <span class="label">People Employed Over the Years</span>
+
+    <div class="about-badges" style="margin-top: 2rem;">
+      <span class="badge">WEF Global Innovator</span>
+      <span class="badge">YC W18</span>
+      <span class="badge">Former Forbes Technology Council</span>
+      <span class="badge">ASTM Project Team Lead</span>
+      <span class="badge">UL Scientific Technology Panel</span>
+      <span class="badge">Bauman MSTU &mdash; Robotics</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW I THINK ===== -->
+<section class="principles" id="principles" aria-label="How I think">
+  <div class="container">
+    <span class="section-label">How I Think</span>
+    <h2 class="section-title">Principles, not platitudes</h2>
+    <p class="section-desc">These aren't aspirational. They're how I actually make decisions.</p>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <h3>Face hard problems directly</h3>
+        <p>Don't route around regulatory, technical, or market challenges. Engage them head-on early.</p>
+        <blockquote>
+          "They began by looking at why others in this space had so far failed. They honed in on the fact that printing structures wasn't the main problem, but the regulations. So, instead of dodging this issue, they decided to engage that head on, early on."
+          <span class="source">DealMakers Podcast, 2021</span>
+        </blockquote>
+      </div>
+
+      <div class="principle-card">
+        <h3>Same statistic, opposite meaning</h3>
+        <p>Surface-level numbers don't tell the real story. The work is figuring out what the data actually means in context.</p>
+        <blockquote>
+          "Construction's low adoption numbers mean low urgency. Energy's low numbers sit on top of 40-year-old grid infrastructure, PLCs nobody can get parts for, and CIOs already budgeting to fix it. Same statistic. Opposite meaning."
+          <span class="source">LinkedIn, Aug 2026</span>
+        </blockquote>
+      </div>
+
+      <div class="principle-card">
+        <h3>Rethink the process, don't automate it</h3>
+        <p>The biggest wins come from cutting out steps that shouldn't exist, not from making legacy workflows faster.</p>
+        <blockquote>
+          "The biggest wins don't come from automating an existing process. They come from rethinking the process from the ground up and cutting out steps that shouldn't exist in the first place."
+          <span class="source">LinkedIn, Jul 2026</span>
+        </blockquote>
+      </div>
+
+      <div class="principle-card">
+        <h3>Quantify the real constraint</h3>
+        <p>Don't repeat industry consensus. Find the constraint nobody else is pricing in and put numbers on it.</p>
+        <blockquote>
+          "Everyone's writing about power and permitting as the constraints on the AI infrastructure buildout. Both real. But there's a quieter one that doesn't show up until commissioning day, and it's costing people a lot more than a late transformer would."
+          <span class="source">LinkedIn, Aug 2026</span>
+        </blockquote>
+      </div>
+
+      <div class="principle-card">
+        <h3>Team building is the core skill</h3>
+        <p>Everything starts and ends with the people. Trust and shared goals matter more than resumes.</p>
+        <blockquote>
+          "The number one most critical skill for entrepreneurs is the ability to build a team."
+          <span class="source">DealMakers Podcast, 2021</span>
+        </blockquote>
+      </div>
+
+      <div class="principle-card">
+        <h3>Standards are competitive advantages</h3>
+        <p>Writing the rules for your industry isn't compliance work. It's how you shape the market while your competitors are still figuring out the product.</p>
+        <blockquote>
+          "Standards are competitive advantages, not compliance work. Build the proof, then the company."
+          <span class="source">Personal principle</span>
+        </blockquote>
+      </div>
     </div>
   </div>
 </section>
@@ -469,9 +615,8 @@
 <!-- ===== WHAT I'M LOOKING FOR ===== -->
 <section class="focus" id="looking-for" aria-label="What I'm looking for">
   <div class="container">
-    <span class="section-label">Looking For</span>
+    <span class="section-label">Working Together</span>
     <h2 class="section-title">What I'm looking for</h2>
-    <p class="section-desc">I invest in and work with early-stage teams solving hard problems in the built environment. Here's what gets my attention.</p>
     <div class="focus-grid">
       <div class="focus-card">
         <div class="focus-card-icon" aria-hidden="true">&#9670;</div>
@@ -481,42 +626,12 @@
       <div class="focus-card">
         <div class="focus-card-icon" aria-hidden="true">&#9671;</div>
         <h3>Partnerships</h3>
-        <p>Corporate innovation teams looking for pilot-ready technologies in construction, manufacturing, and energy. European and international startups entering the US market. Architects, builders, and developers exploring new materials and methods. I connect the right people through BuildTech Ventures and the Launchpad.</p>
+        <p>Corporate innovation teams looking for pilot-ready technologies in construction, manufacturing, and energy. European and international startups entering the US market. Architects, builders, and developers exploring new materials and methods.</p>
       </div>
       <div class="focus-card">
         <div class="focus-card-icon" aria-hidden="true">&#9672;</div>
         <h3>Speaking &amp; collaboration</h3>
-        <p>Conferences, panels, and podcasts on construction tech, robotics, materials science, venture building, and the future of how we make things. I also collaborate with design studios, research labs, and cultural institutions through Echoes of Future Matter.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section id="about" aria-label="About Alexey Dubov">
-  <div class="container">
-    <span class="section-label">About</span>
-    <h2 class="section-title">The short version</h2>
-    <div class="about-grid">
-      <img src="images/alexey-dubov.png" alt="Alexey Dubov, Managing Partner at BuildTech Ventures" class="about-photo" width="240" height="240" loading="lazy">
-      <div>
-        <p class="section-desc" style="max-width: 100%;">
-          I started my first company at Bauman Moscow State Technical University. Since then I've founded six companies across Russia, Singapore, Germany, and the US. Two exits: Glance Clock (acquired by NeXtime) and RuJack (acquired by LG Electronics). The pattern is always the same: find a domain where the technology doesn't exist yet, build the first working version, prove it's real.
-        </p>
-        <p class="section-desc" style="max-width: 100%; margin-top: 1rem;">
-          At Mighty Buildings, I took photopolymer composites from unproven concept to the first UL-listed 3D-printed building elements in the world. Under a year. $20M revenue. Co-authored UL3401 and ISO/ASTM 52939. Through BuildTech Ventures, I now do that across a broader portfolio: spatial computing, carbon tech, AI workflows, logistics.
-        </p>
-        <p class="section-desc" style="max-width: 100%; margin-top: 1rem; font-size: 0.95rem; color: var(--warm-gray);">
-          <strong>How I think:</strong> Move fast on hard problems. Find customers before you have a product. Standards are competitive advantages, not compliance work. Build the proof, then the company.
-        </p>
-        <div class="about-badges">
-          <span class="badge">WEF Global Innovator</span>
-          <span class="badge">YC W18</span>
-          <span class="badge">Forbes Technology Council</span>
-          <span class="badge">ASTM Project Team Lead</span>
-          <span class="badge">UL Scientific Technology Panel</span>
-          <span class="badge">Bauman MSTU &mdash; Robotics</span>
-        </div>
+        <p>Conferences, panels, and podcasts on construction tech, robotics, materials science, venture building, and the future of how we make things. Design studios, research labs, and cultural institutions through Echoes of Future Matter.</p>
       </div>
     </div>
   </div>
@@ -557,8 +672,8 @@
         <p>Smart wall clock that shows contextual information from your apps. Calendar, weather, calls, voice assistant responses. Built in Singapore, shipped 3,000+ units. Acquired by NeXtime.</p>
       </div>
       <div class="venture-card">
-        <img src="images/svet-logo.png" alt="SVET Labs logo" class="venture-logo" width="80" height="36" loading="lazy">
-        <h3>SVET Labs</h3>
+        <img src="images/svet-logo.png" alt="SVET logo" class="venture-logo" width="80" height="36" loading="lazy">
+        <h3>SVET</h3>
         <div class="role">Founder &middot; CEO &middot; 2016 &ndash; 2017</div>
         <p>The first health-friendly LED light bulb. Mimics daylight dynamics to support circadian rhythm. Rich-spectrum output, built-in biological safety system. Built in Singapore and Moscow.</p>
       </div>
@@ -665,112 +780,145 @@
   <a href="mailto:alexey@buildtech.vc" data-plausible-event="cta-midpage">Get in Touch</a>
 </section>
 
-<!-- ===== INSIGHTS (merged Writing + Media) ===== -->
-<section id="insights" aria-label="Articles, media, and writing">
+<!-- ===== PROOF ===== -->
+<section class="proof-section" id="proof" aria-label="Standards, writing, and media">
   <div class="container">
-    <span class="section-label">Insights</span>
-    <h2 class="section-title">Writing, press &amp; talks</h2>
-    <p class="section-desc">What I think about, where I've been featured, and what I've been saying on stage.</p>
+    <span class="section-label">Proof</span>
+    <h2 class="section-title">Standards, writing &amp; media</h2>
 
-    <div class="year-divider">Writing</div>
-    <div class="writing-list">
-      <a href="https://www.linkedin.com/posts/alekseydubov_ai-infrastructure-has-a-quality-control-problem-activity-7480882626157371392-BLhX" class="writing-item" target="_blank" rel="noopener">
-        <h4>AI Infrastructure Has a Quality Control Problem Nobody's Pricing In</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Aug 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a href="https://www.linkedin.com/posts/alekseydubov_the-missing-layer-in-teleoperation-cognitive-activity-7477741510298595328-p4up" class="writing-item" target="_blank" rel="noopener">
-        <h4>The Missing Layer in Teleoperation: Cognitive State Awareness</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a href="https://www.linkedin.com/posts/alekseydubov_the-robot-in-the-room-why-dexterity-not-activity-7472063498701246464-KVjL" class="writing-item" target="_blank" rel="noopener">
-        <h4>The Robot in the Room: Why Dexterity, Not Price, Is the Real Barrier</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a href="https://www.linkedin.com/pulse/air-quality-flywheel-alexey-dubov-ioi7c" class="writing-item" target="_blank" rel="noopener">
-        <h4>The Air Quality Flywheel</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a href="https://www.linkedin.com/pulse/permitting-bottleneck-real-ai-infrastructure-problem-alexey-dubov-9qt0c" class="writing-item" target="_blank" rel="noopener">
-        <h4>The Permitting Bottleneck Is the Real AI Infrastructure Problem</h4>
-        <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a href="https://www.forbes.com/councils/forbestechcouncil/2022/12/29/construction-tech-a-tough-nut-to-crack/" class="writing-item" target="_blank" rel="noopener">
-        <h4>Construction Tech &mdash; A Tough Nut to Crack</h4>
-        <div class="writing-meta"><span class="source">Forbes</span><span class="date">Dec 2022</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
-      </a>
+    <!-- Standards -->
+    <div class="proof-subsection">
+      <h3>Standards I co-authored</h3>
+      <div class="standards-grid">
+        <div class="standard-card">
+          <div class="standard-label">International Standard</div>
+          <h4>ISO/ASTM 52939:2023</h4>
+          <p>Additive manufacturing for construction &mdash; qualification principles for structural and infrastructure elements. The global regulatory backbone for 3D-printed construction. Adopted across 30+ countries.</p>
+          <a href="https://www.iso.org/standard/81177.html" target="_blank" rel="noopener">View on ISO.org &rarr;</a>
+        </div>
+        <div class="standard-card">
+          <div class="standard-label">Industry Standard</div>
+          <h4>UL 3401</h4>
+          <p>Outline of investigation for additive manufacturing in construction. The standard under which Mighty Buildings achieved the first UL-listed 3D-printed building elements in the world.</p>
+        </div>
+        <div class="standard-card">
+          <div class="standard-label">Academic Publication</div>
+          <h4>ASTM STP163-EB</h4>
+          <p>Two peer-reviewed papers on polymer composites replacing steel in construction and quality assurance methods for additive manufacturing in regulated environments.</p>
+          <a href="https://doi.org/10.1520/stp163720200103" target="_blank" rel="noopener">View paper &rarr;</a>
+        </div>
+      </div>
     </div>
 
-    <div class="year-divider">Featured in</div>
-    <div class="media-grid">
-      <a href="https://alejandrocremades.com/alexey-dubov" class="media-item" target="_blank" rel="noopener">
-        <span class="media-badge podcast">Podcast</span>
-        <div><div class="media-text">Raising $200M to 3D Print Your Next House</div><div class="media-outlet">Dealmakers Podcast</div></div>
-      </a>
-      <a href="https://www.voxelmatters.com/mighty-buildings-the-california-way/" class="media-item" target="_blank" rel="noopener">
-        <span class="media-badge press">Press</span>
-        <div><div class="media-text">Mighty Buildings, the California Way</div><div class="media-outlet">VoxelMatters &middot; Mar 2023</div></div>
-      </a>
-      <a href="https://www.forbes.com/sites/afdhelaziz/2021/12/13/how-mighty-buildings-is-transforming-home-construction-with-robotics-to-address-the-climate-crisis-and-housing-affordability/" class="media-item" target="_blank" rel="noopener">
-        <span class="media-badge press">Forbes</span>
-        <div><div class="media-text">How Mighty Buildings Is Transforming Home Construction</div><div class="media-outlet">Forbes &middot; Dec 2021</div></div>
-      </a>
-      <a href="https://www.foundamental.com/perspectives/mighty-buildings---3d-printing-homes-in-a-factory" class="media-item" target="_blank" rel="noopener">
-        <span class="media-badge press">Deep Dive</span>
-        <div><div class="media-text">3D Printing Homes in a Factory</div><div class="media-outlet">Foundamental</div></div>
-      </a>
-      <a href="https://additivemanufacturing.com/2023/03/23/sxsw-additive-manufacturing-wrap-up/" class="media-item" target="_blank" rel="noopener">
-        <span class="media-badge speaking">Speaking</span>
-        <div><div class="media-text">SXSW &mdash; Construction 3D Printing Panel</div><div class="media-outlet">SXSW 2023</div></div>
-      </a>
-      <a href="https://housinginnovationsummit.com/speaker/alexey-dubov" class="media-item" target="_blank" rel="noopener">
-        <span class="media-badge speaking">Speaking</span>
-        <div><div class="media-text">Housing Innovation Summit</div><div class="media-outlet">Speaker</div></div>
-      </a>
+    <!-- Writing -->
+    <div class="proof-subsection">
+      <h3>Writing</h3>
+      <div class="writing-list">
+        <a href="https://www.linkedin.com/posts/alekseydubov_ai-infrastructure-has-a-quality-control-problem-activity-7480882626157371392-BLhX" class="writing-item" target="_blank" rel="noopener">
+          <h4>AI Infrastructure Has a Quality Control Problem Nobody's Pricing In</h4>
+          <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Aug 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
+        </a>
+        <a href="https://www.linkedin.com/posts/alekseydubov_the-missing-layer-in-teleoperation-cognitive-activity-7477741510298595328-p4up" class="writing-item" target="_blank" rel="noopener">
+          <h4>The Missing Layer in Teleoperation: Cognitive State Awareness</h4>
+          <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
+        </a>
+        <a href="https://www.linkedin.com/posts/alekseydubov_the-robot-in-the-room-why-dexterity-not-activity-7472063498701246464-KVjL" class="writing-item" target="_blank" rel="noopener">
+          <h4>The Robot in the Room: Why Dexterity, Not Price, Is the Real Barrier</h4>
+          <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
+        </a>
+        <a href="https://www.linkedin.com/pulse/air-quality-flywheel-alexey-dubov-ioi7c" class="writing-item" target="_blank" rel="noopener">
+          <h4>The Air Quality Flywheel</h4>
+          <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
+        </a>
+        <a href="https://www.linkedin.com/pulse/permitting-bottleneck-real-ai-infrastructure-problem-alexey-dubov-9qt0c" class="writing-item" target="_blank" rel="noopener">
+          <h4>The Permitting Bottleneck Is the Real AI Infrastructure Problem</h4>
+          <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
+        </a>
+        <a href="https://www.forbes.com/councils/forbestechcouncil/2022/12/29/construction-tech-a-tough-nut-to-crack/" class="writing-item" target="_blank" rel="noopener">
+          <h4>Construction Tech &mdash; A Tough Nut to Crack</h4>
+          <div class="writing-meta"><span class="source">Forbes</span><span class="date">Dec 2022</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
+        </a>
+      </div>
     </div>
 
-    <div class="year-divider">Talks &amp; panels</div>
-    <div class="video-grid">
-      <a href="https://www.youtube.com/watch?v=IqzNO1e_3Go" class="video-card" target="_blank" rel="noopener">
-        <div class="video-thumb">
-          <img src="images/yt-IqzNO1e_3Go.jpg" alt="BitBuilders Podcast episode" width="320" height="180" loading="lazy">
-          <div class="video-play" aria-hidden="true">&#9654;</div>
-        </div>
-        <div class="video-info">
-          <h4>3D Printing Homes: How Mighty Buildings Is Doing It</h4>
-          <div class="outlet">BitBuilders Podcast</div>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/live/MRW0r-qz9Rs" class="video-card" target="_blank" rel="noopener">
-        <div class="video-thumb">
-          <img src="images/yt-MRW0r-qz9Rs.jpg" alt="Interview on 3D printed materials" width="320" height="180" loading="lazy">
-          <div class="video-play" aria-hidden="true">&#9654;</div>
-        </div>
-        <div class="video-info">
-          <h4>This 3D Printed Material is Stronger than Concrete</h4>
-          <div class="outlet">YouTube Interview</div>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/watch?v=Y1htuYdhWDA" class="video-card" target="_blank" rel="noopener">
-        <div class="video-thumb">
-          <img src="images/yt-Y1htuYdhWDA.jpg" alt="UNB webinar" width="320" height="180" loading="lazy">
-          <div class="video-play" aria-hidden="true">&#9654;</div>
-        </div>
-        <div class="video-info">
-          <h4>Building a Construction Company in the 21st Century</h4>
-          <div class="outlet">UNB OCRC Webinar</div>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/watch?v=1gL4EYDsLbk" class="video-card" target="_blank" rel="noopener">
-        <div class="video-thumb">
-          <img src="images/yt-1gL4EYDsLbk.jpg" alt="TV interview on Mighty Buildings" width="320" height="180" loading="lazy">
-          <div class="video-play" aria-hidden="true">&#9654;</div>
-        </div>
-        <div class="video-info">
-          <h4>3D Printing Houses to Help Two Crises</h4>
-          <div class="outlet">TV Interview</div>
-        </div>
-      </a>
+    <!-- Featured in -->
+    <div class="proof-subsection">
+      <h3>Featured in</h3>
+      <div class="media-grid">
+        <a href="https://www.forbes.com/sites/afdhelaziz/2021/12/13/how-mighty-buildings-is-transforming-home-construction-with-robotics-to-address-the-climate-crisis-and-housing-affordability/" class="media-item" target="_blank" rel="noopener">
+          <span class="media-badge press">Forbes</span>
+          <div><div class="media-text">How Mighty Buildings Is Transforming Home Construction</div><div class="media-outlet">Forbes &middot; Dec 2021</div></div>
+        </a>
+        <a href="https://alejandrocremades.com/alexey-dubov" class="media-item" target="_blank" rel="noopener">
+          <span class="media-badge podcast">Podcast</span>
+          <div><div class="media-text">Raising $200M to 3D Print Your Next House</div><div class="media-outlet">DealMakers Podcast</div></div>
+        </a>
+        <a href="https://www.voxelmatters.com/mighty-buildings-the-california-way/" class="media-item" target="_blank" rel="noopener">
+          <span class="media-badge press">Press</span>
+          <div><div class="media-text">Mighty Buildings, the California Way</div><div class="media-outlet">VoxelMatters &middot; Mar 2023</div></div>
+        </a>
+        <a href="https://www.foundamental.com/perspectives/mighty-buildings---3d-printing-homes-in-a-factory" class="media-item" target="_blank" rel="noopener">
+          <span class="media-badge press">Deep Dive</span>
+          <div><div class="media-text">3D Printing Homes in a Factory</div><div class="media-outlet">Foundamental</div></div>
+        </a>
+        <a href="https://additivemanufacturing.com/2023/03/23/sxsw-additive-manufacturing-wrap-up/" class="media-item" target="_blank" rel="noopener">
+          <span class="media-badge speaking">Speaking</span>
+          <div><div class="media-text">SXSW &mdash; Construction 3D Printing Panel</div><div class="media-outlet">SXSW 2023</div></div>
+        </a>
+        <a href="https://housinginnovationsummit.com/speaker/alexey-dubov" class="media-item" target="_blank" rel="noopener">
+          <span class="media-badge speaking">Speaking</span>
+          <div><div class="media-text">Housing Innovation Summit</div><div class="media-outlet">Speaker</div></div>
+        </a>
+      </div>
     </div>
+
+    <!-- Talks -->
+    <div class="proof-subsection">
+      <h3>Talks &amp; panels</h3>
+      <div class="video-grid">
+        <a href="https://www.youtube.com/watch?v=IqzNO1e_3Go" class="video-card" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="images/yt-IqzNO1e_3Go.jpg" alt="BitBuilders Podcast episode" width="320" height="180" loading="lazy">
+            <div class="video-play" aria-hidden="true">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h4>3D Printing Homes: How Mighty Buildings Is Doing It</h4>
+            <div class="outlet">BitBuilders Podcast</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/live/MRW0r-qz9Rs" class="video-card" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="images/yt-MRW0r-qz9Rs.jpg" alt="Interview on 3D printed materials" width="320" height="180" loading="lazy">
+            <div class="video-play" aria-hidden="true">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h4>This 3D Printed Material is Stronger than Concrete</h4>
+            <div class="outlet">YouTube Interview</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=Y1htuYdhWDA" class="video-card" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="images/yt-Y1htuYdhWDA.jpg" alt="UNB webinar" width="320" height="180" loading="lazy">
+            <div class="video-play" aria-hidden="true">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h4>Building a Construction Company in the 21st Century</h4>
+            <div class="outlet">UNB OCRC Webinar</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=1gL4EYDsLbk" class="video-card" target="_blank" rel="noopener">
+          <div class="video-thumb">
+            <img src="images/yt-1gL4EYDsLbk.jpg" alt="TV interview on Mighty Buildings" width="320" height="180" loading="lazy">
+            <div class="video-play" aria-hidden="true">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h4>3D Printing Houses to Help Two Crises</h4>
+            <div class="outlet">TV Interview</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
