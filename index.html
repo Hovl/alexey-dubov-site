@@ -42,24 +42,26 @@
   <script defer data-domain="hovl.github.io/alexey-dubov-site" src="https://plausible.io/js/script.tagged-events.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary-blue: #4A4AFB;
-      --dark-navy: #1C2B44;
-      --gold: #E8A121;
+      --primary-blue: #5056f7;
+      --dark-navy: #1d243e;
+      --gold: #f59e0b;
+      --accent-orange: #ff5f00;
+      --royal-blue: #476ef2;
       --white: #FFFFFF;
-      --off-white: #F8F8F8;
-      --light-gray: #E0E0E0;
-      --dark-gray: #222222;
-      --med-gray: #666666;
-      --warm-gray: #4B5563;
+      --off-white: #f8f8f5;
+      --light-gray: #e5e5e5;
+      --dark-gray: #171717;
+      --med-gray: #737373;
+      --warm-gray: #525252;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--dark-gray);
       background: var(--white);
       line-height: 1.7;
@@ -78,7 +80,7 @@
     /* Nav */
     nav {
       position: fixed; top: 0; width: 100%;
-      background: rgba(28, 43, 68, 0.95); backdrop-filter: blur(12px);
+      background: rgba(29, 36, 62, 0.95); backdrop-filter: blur(12px);
       z-index: 100; padding: 0 2rem;
     }
     .nav-inner {
@@ -86,8 +88,8 @@
       display: flex; align-items: center; justify-content: space-between; height: 64px;
     }
     .nav-logo {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-      font-size: 1.15rem; color: var(--white); text-decoration: none; letter-spacing: -0.02em;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
+      font-size: 1.15rem; color: var(--white); text-decoration: none; letter-spacing: -0.01em;
     }
     .nav-logo span { color: var(--gold); }
     .nav-links { display: flex; gap: 2rem; }
@@ -100,7 +102,7 @@
 
     /* Hero */
     .hero {
-      background: var(--dark-navy); min-height: 100vh;
+      background: var(--primary-blue); min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
       text-align: center; padding: 8rem 2rem 6rem;
       position: relative; overflow: hidden;
@@ -108,8 +110,8 @@
     .hero::before {
       content: ''; position: absolute; top: -50%; left: -50%;
       width: 200%; height: 200%;
-      background: radial-gradient(ellipse at 30% 50%, rgba(74, 74, 251, 0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 20%, rgba(232, 161, 33, 0.08) 0%, transparent 50%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(255, 255, 255, 0.10) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 20%, rgba(212, 213, 253, 0.18) 0%, transparent 50%);
       animation: drift 20s ease-in-out infinite;
     }
     @keyframes drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-2%, 1%); } }
@@ -119,9 +121,9 @@
       object-fit: cover; border: 3px solid rgba(255,255,255,0.15); margin-bottom: 2rem;
     }
     .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 700;
-      color: var(--white); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.25rem, 5vw, 4rem); font-weight: 700;
+      color: var(--white); line-height: 1.1; margin-bottom: 1.5rem;
     }
     .hero h1 em { font-style: normal; color: var(--gold); }
     .hero-subtitle {
@@ -136,7 +138,7 @@
       text-align: center;
     }
     .hero-cred .num {
-      font-family: 'Space Grotesk', sans-serif; font-size: 2rem;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem;
       font-weight: 700; color: var(--gold); display: block;
     }
     .hero-cred .label {
@@ -144,12 +146,12 @@
       text-transform: uppercase; margin-top: 0.15rem;
     }
     .hero-cta {
-      display: inline-block; background: var(--primary-blue); color: var(--white);
-      padding: 0.9rem 2.4rem; border-radius: 6px; text-decoration: none;
-      font-weight: 600; font-size: 0.9rem; letter-spacing: 0.03em;
+      display: inline-block; background: var(--white); color: var(--primary-blue);
+      padding: 0.85rem 2.4rem; border-radius: 10rem; text-decoration: none;
+      font-weight: 500; font-size: 0.95rem; letter-spacing: 0.01em;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74, 74, 251, 0.3); }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(29, 36, 62, 0.25); }
     .hero-secondary-cta {
       display: inline-block; color: rgba(255,255,255,0.5); text-decoration: none;
       font-size: 0.8rem; margin-left: 1.5rem;
@@ -161,18 +163,22 @@
     /* Sections */
     section { padding: 6rem 2rem; }
     .section-label {
-      display: inline-block; background: var(--primary-blue); color: var(--white);
-      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; padding: 0.35rem 1rem;
-      border-radius: 50px; margin-bottom: 1rem;
+      display: inline-block; color: var(--accent-orange);
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.13rem;
+      text-transform: uppercase; margin-bottom: 1rem;
     }
     .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
-      color: var(--dark-navy); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700;
+      color: var(--dark-navy); line-height: 1.2; margin-bottom: 1rem;
     }
     .section-desc {
-      color: var(--med-gray); font-size: 1.05rem; max-width: 650px; line-height: 1.7;
+      font-family: 'Outfit', sans-serif; font-weight: 300;
+      color: var(--med-gray); font-size: 1.15rem; max-width: 650px; line-height: 1.6;
+    }
+    .hero-subtitle, .narrative-block p, .principle-card p, .venture-card p,
+    .portfolio-card .portfolio-desc, .focus-card p, .standard-card p {
+      font-family: 'Outfit', sans-serif; font-weight: 300;
     }
     .container { max-width: 1200px; margin: 0 auto; }
 
@@ -183,7 +189,7 @@
     }
     .narrative-block:last-child { margin-bottom: 0; }
     .narrative-block h3 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem;
       font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
     }
     .narrative-block p {
@@ -202,7 +208,7 @@
       padding: 2rem 2rem 2rem 2.5rem; border-radius: 0 8px 8px 0;
     }
     .principle-card h3 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem;
       font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
     }
     .principle-card p {
@@ -223,17 +229,17 @@
       gap: 2rem; margin-top: 3rem;
     }
     .venture-card {
-      background: var(--dark-navy); border-radius: 8px;
+      background: var(--dark-navy); border-radius: 1rem;
       padding: 2.5rem; color: var(--white); transition: transform 0.2s;
     }
     .venture-card:hover { transform: translateY(-3px); }
     .venture-logo {
-      height: 36px; width: auto; margin-bottom: 1rem;
-      object-fit: contain; filter: brightness(0) invert(1);
+      height: 36px; width: auto; max-width: 100%; margin-bottom: 1rem;
+      object-fit: contain; object-position: left center; filter: brightness(0) invert(1);
     }
     .venture-logo.light-filter { filter: none; }
     .venture-card h3 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem;
       font-weight: 700; margin-bottom: 0.5rem;
     }
     .venture-card .role {
@@ -250,21 +256,21 @@
     }
     .portfolio-card {
       background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 8px; padding: 1.8rem;
+      border-radius: 1rem; padding: 1.8rem;
       transition: transform 0.2s, box-shadow 0.2s;
       text-decoration: none; color: inherit; display: block;
     }
-    .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-    .portfolio-logo { height: 32px; width: auto; margin-bottom: 0.8rem; object-fit: contain; }
+    .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 1px 5px 3px rgba(0,0,0,0.05); }
+    .portfolio-logo { height: 32px; width: auto; max-width: 100%; margin-bottom: 0.8rem; object-fit: contain; object-position: left center; }
     .portfolio-card h4 {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
       font-size: 1.1rem; color: var(--dark-navy); margin-bottom: 0.3rem;
     }
     .portfolio-card .portfolio-desc {
       color: var(--med-gray); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.5rem;
     }
     .portfolio-tag {
-      display: inline-block; background: rgba(74, 74, 251, 0.08); color: var(--primary-blue);
+      display: inline-block; background: rgba(80, 86, 247, 0.08); color: var(--primary-blue);
       font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem;
       border-radius: 4px; margin-right: 0.3rem; margin-bottom: 0.3rem;
     }
@@ -275,7 +281,7 @@
     .proof-subsection { margin-bottom: 3rem; }
     .proof-subsection:last-child { margin-bottom: 0; }
     .proof-subsection h3 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem;
       font-weight: 700; color: var(--dark-navy); margin-bottom: 1.5rem;
       padding-bottom: 0.5rem; border-bottom: 2px solid var(--light-gray);
     }
@@ -286,14 +292,14 @@
       gap: 1.5rem;
     }
     .standard-card {
-      background: var(--dark-navy); border-radius: 8px; padding: 2rem; color: var(--white);
+      background: var(--dark-navy); border-radius: 1rem; padding: 2rem; color: var(--white);
     }
     .standard-card .standard-label {
       color: var(--gold); font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;
     }
     .standard-card h4 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem;
       font-weight: 700; margin-bottom: 0.5rem;
     }
     .standard-card p {
@@ -310,13 +316,13 @@
     .writing-item {
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.5rem 2rem; background: var(--white);
-      border: 1px solid var(--light-gray); border-radius: 8px;
+      border: 1px solid var(--light-gray); border-radius: 1rem;
       text-decoration: none; color: inherit;
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .writing-item:hover { transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
     .writing-item h4 {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600;
       color: var(--dark-navy); font-size: 1rem;
     }
     .writing-meta {
@@ -324,7 +330,7 @@
       flex-shrink: 0; margin-left: 1rem;
     }
     .writing-item .source {
-      background: rgba(74, 74, 251, 0.08); color: var(--primary-blue);
+      background: rgba(80, 86, 247, 0.08); color: var(--primary-blue);
       font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px;
     }
     .writing-item .date { color: var(--med-gray); font-size: 0.8rem; white-space: nowrap; }
@@ -338,7 +344,7 @@
     .media-item {
       display: flex; align-items: center; gap: 0.8rem;
       padding: 1rem 1.2rem; background: var(--white);
-      border: 1px solid var(--light-gray); border-radius: 6px;
+      border: 1px solid var(--light-gray); border-radius: 1rem;
       text-decoration: none; color: inherit;
       transition: transform 0.2s, box-shadow 0.2s;
     }
@@ -348,10 +354,10 @@
       text-transform: uppercase; padding: 0.2rem 0.5rem;
       border-radius: 4px; flex-shrink: 0;
     }
-    .media-badge.podcast { background: rgba(232, 161, 33, 0.12); color: #B87D00; }
-    .media-badge.press { background: rgba(74, 74, 251, 0.08); color: var(--primary-blue); }
-    .media-badge.speaking { background: rgba(232, 161, 33, 0.12); color: #B87D00; }
-    .media-badge.standard { background: rgba(74, 74, 251, 0.08); color: var(--primary-blue); }
+    .media-badge.podcast { background: rgba(245, 158, 11, 0.12); color: #c07c08; }
+    .media-badge.press { background: rgba(80, 86, 247, 0.08); color: var(--primary-blue); }
+    .media-badge.speaking { background: rgba(245, 158, 11, 0.12); color: #c07c08; }
+    .media-badge.standard { background: rgba(80, 86, 247, 0.08); color: var(--primary-blue); }
     .media-item .media-text { font-size: 0.9rem; color: var(--dark-navy); font-weight: 500; }
     .media-item .media-outlet { font-size: 0.75rem; color: var(--med-gray); }
 
@@ -362,7 +368,7 @@
     }
     .video-card {
       background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 8px; overflow: hidden; text-decoration: none;
+      border-radius: 1rem; overflow: hidden; text-decoration: none;
       color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: block;
     }
     .video-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
@@ -373,13 +379,13 @@
     .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
     .video-play {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 56px; height: 56px; background: rgba(74, 74, 251, 0.9);
+      width: 56px; height: 56px; background: rgba(80, 86, 247, 0.9);
       border-radius: 50%; display: flex; align-items: center;
       justify-content: center; color: var(--white); font-size: 1.2rem;
     }
     .video-info { padding: 1.2rem 1.5rem; }
     .video-info h4 {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
       font-size: 1rem; color: var(--dark-navy); margin-bottom: 0.3rem; line-height: 1.3;
     }
     .video-info .outlet { color: var(--med-gray); font-size: 0.85rem; }
@@ -391,7 +397,7 @@
     }
     .focus-card {
       background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 8px; padding: 2.5rem;
+      border-radius: 1rem; padding: 2.5rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .focus-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
@@ -401,7 +407,7 @@
       justify-content: center; margin-bottom: 1.5rem; font-size: 1.4rem; color: var(--white);
     }
     .focus-card h3 {
-      font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem;
       font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
     }
     .focus-card p { color: var(--med-gray); font-size: 0.95rem; line-height: 1.7; }
@@ -409,15 +415,15 @@
     /* Badges */
     .about-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
     .badge {
-      display: inline-block; background: rgba(74, 74, 251, 0.06); color: var(--primary-blue);
+      display: inline-block; background: rgba(80, 86, 247, 0.06); color: var(--primary-blue);
       font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 50px;
-      border: 1px solid rgba(74, 74, 251, 0.15);
+      border: 1px solid rgba(80, 86, 247, 0.15);
     }
 
     /* Mid-page CTA */
     .mid-cta { background: var(--primary-blue); padding: 4rem 2rem; text-align: center; }
     .mid-cta h2 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700;
       color: var(--white); margin-bottom: 1rem;
     }
@@ -427,8 +433,8 @@
     }
     .mid-cta a {
       display: inline-block; background: var(--white); color: var(--primary-blue);
-      padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none;
-      font-weight: 600; font-size: 0.9rem; transition: transform 0.2s, box-shadow 0.2s;
+      padding: 0.8rem 2rem; border-radius: 10rem; text-decoration: none;
+      font-weight: 500; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s;
     }
     .mid-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
 
@@ -440,15 +446,15 @@
     }
     .contact-link {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 1.8rem; border: 2px solid var(--light-gray);
-      border-radius: 6px; text-decoration: none; color: var(--dark-navy);
-      font-weight: 600; font-size: 0.9rem; transition: all 0.2s;
+      padding: 0.75rem 1.8rem; border: 2px solid var(--med-gray);
+      border-radius: 10rem; text-decoration: none; color: var(--med-gray);
+      font-weight: 500; font-size: 0.95rem; transition: all 0.2s;
     }
-    .contact-link:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
+    .contact-link:hover { background: var(--light-gray); border-color: var(--light-gray); color: var(--dark-navy); }
     .contact-link.primary {
       background: var(--primary-blue); border-color: var(--primary-blue); color: var(--white);
     }
-    .contact-link.primary:hover { background: #3a3ae8; }
+    .contact-link.primary:hover { background: var(--royal-blue); border-color: var(--royal-blue); color: var(--white); }
 
     /* Footer */
     footer {
@@ -655,25 +661,25 @@
     <p class="section-desc">Six companies, four countries, two exits. Every one started in a domain where the technology didn't exist yet.</p>
     <div class="ventures-grid">
       <div class="venture-card">
-        <img src="images/mighty-buildings.png" alt="Mighty Buildings logo" class="venture-logo" width="120" height="36" loading="lazy">
+        <img src="images/mighty-buildings.png" alt="Mighty Buildings logo" class="venture-logo" width="84" height="36" loading="lazy">
         <h3>Mighty Buildings</h3>
         <div class="role">Co-Founder &middot; CIO / COO &middot; 2017 &ndash; 2025</div>
         <p>3D printing, advanced materials, and robotic automation for construction. Took a materials hypothesis from lab to the first UL-listed 3D-printed building elements in the world. $185M+ raised. 60+ buildings delivered. 20+ patents and inventions. Co-authored UL3401 and ISO/ASTM 52939. YC W18.</p>
       </div>
       <div class="venture-card">
-        <img src="images/buildtech-ventures.png" alt="BuildTech Ventures logo" class="venture-logo light-filter" width="120" height="36" loading="lazy">
+        <img src="images/buildtech-ventures.png" alt="BuildTech Ventures logo" class="venture-logo" width="127" height="36" loading="lazy">
         <h3>BuildTech Ventures</h3>
         <div class="role">Managing Partner &middot; 2021 &ndash; Present</div>
         <p>Silicon Valley investment group backing ConTech, RealTech, energy, and robotics companies. Pre-Seed through Series A. We back teams solving hard problems in the built environment, from AI workflows and automated design to energy infrastructure and physical AI.</p>
       </div>
       <div class="venture-card">
-        <img src="images/buildtech-launchpad.png" alt="BuildTech Launchpad logo" class="venture-logo light-filter" width="80" height="36" loading="lazy">
+        <img src="images/buildtech-launchpad.png" alt="BuildTech logo" class="venture-logo light-filter" width="328" height="36" loading="lazy">
         <h3>BuildTech Launchpad</h3>
         <div class="role">Founder &middot; 2025 &ndash; Present</div>
         <p>US market growth accelerator for construction tech startups. We help companies from Europe, the UK, and beyond validate use cases, land pilots, and close early revenue with US corporates. Focus areas: energy infrastructure, robotics, AI workflows, automated design, and physical AI.</p>
       </div>
       <div class="venture-card">
-        <img src="images/eofm-logo.png" alt="EoFM" class="venture-logo light-filter" width="80" height="25" loading="lazy">
+        <img src="images/eofm-logo.png" alt="EoFM logo" class="venture-logo light-filter" width="80" height="23" loading="lazy">
         <h3>Echoes of Future Matter</h3>
         <div class="role">Co-Founder &middot; 2025 &ndash; Present</div>
         <p>Cultural research laboratory exploring materiality and design futures. Exhibitions, panels, and interviews at the intersection of architecture, design, and emerging technologies. Co-founded with Andrei Hakhovich.</p>
@@ -684,10 +690,10 @@
         <p>Smart wall clock that shows contextual information from your apps. Calendar, weather, calls, voice assistant responses. Built in Singapore, shipped 3,000+ units. Acquired by NeXtime.</p>
       </div>
       <div class="venture-card">
-        <img src="images/svet-logo.png" alt="SVET logo" class="venture-logo" width="80" height="36" loading="lazy">
+        <img src="images/svet-logo.png" alt="SVET logo" class="venture-logo" width="80" height="21" loading="lazy">
         <h3>SVET</h3>
         <div class="role">Founder &middot; CEO &middot; 2016 &ndash; 2017</div>
-        <p>The first health-friendly LED light bulb. Mimics daylight dynamics to support circadian rhythm. Rich-spectrum output, built-in biological safety system. Built in Singapore and Moscow.</p>
+        <p>The first health-friendly LED light bulb. Mimics daylight dynamics to support circadian rhythm. Rich-spectrum output, built-in biological safety system. Built in Germany and Singapore.</p>
       </div>
       <div class="venture-card">
         <h3>Trinity Retail Solutions</h3>
@@ -695,7 +701,7 @@
         <p>Digital content distribution kiosks for retail. Launched in Moscow, expanded to Germany. Presented at Gamescom 2009. Pioneered on-demand content before streaming took over.</p>
       </div>
       <div class="venture-card">
-        <img src="images/rujack.png" alt="RuJack logo" class="venture-logo light-filter" width="80" height="36" loading="lazy">
+        <img src="images/rujack.png" alt="RuJack logo" class="venture-logo" width="28" height="36" loading="lazy">
         <h3>RuJack</h3>
         <div class="role">Co-Founder &middot; CTO</div>
         <p>Hardware technology venture. Acquired by LG Electronics.</p>
@@ -712,70 +718,70 @@
     <p class="section-desc">Selected companies from the BuildTech Ventures portfolio. Each pushing on a real problem in the built environment.</p>
     <div class="portfolio-grid">
       <a href="https://www.buildtech.vc/portfolio/kite-compliance" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/kite-compliance.png" alt="Kite Compliance logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/kite-compliance.png" alt="Kite Compliance logo" class="portfolio-logo" width="221" height="32" loading="lazy">
         <h4>Kite Compliance</h4>
         <p class="portfolio-desc">AI-powered compliance navigation for prefab and construction teams. I serve as independent director.</p>
         <span class="portfolio-tag">AI</span><span class="portfolio-tag">Compliance</span>
         <div class="portfolio-stage">2026 &middot; Pre-Seed</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/rem-brain" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/rem-brain.jpeg" alt="Rem Brain logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/rem-brain.jpeg" alt="Rem Brain logo" class="portfolio-logo" width="32" height="32" loading="lazy">
         <h4>Rem Brain</h4>
         <p class="portfolio-desc">Physical AI for assembly lines and manufacturing automation.</p>
         <span class="portfolio-tag">Robotics</span>
         <div class="portfolio-stage">2025 &middot; Pre-Seed</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/higharc" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/higharc.png" alt="Higharc logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/higharc.png" alt="Higharc logo" class="portfolio-logo" width="154" height="32" loading="lazy">
         <h4>Higharc</h4>
         <p class="portfolio-desc">Homebuilding cloud for design, estimation, sales, and construction.</p>
         <span class="portfolio-tag">Automated Design</span>
         <div class="portfolio-stage">2024 &middot; Series B</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/hywatts" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/hywatts.png" alt="HyWatts logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/hywatts.png" alt="HyWatts logo" class="portfolio-logo" width="134" height="32" loading="lazy">
         <h4>HyWatts</h4>
         <p class="portfolio-desc">Renewable and low-cost energy with Power-Plant-in-a-Box.</p>
         <span class="portfolio-tag">New Energy</span>
         <div class="portfolio-stage">2024 &middot; Pre-Seed</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/beam" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/beam.png" alt="Beam logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/beam.png" alt="Beam logo" class="portfolio-logo" width="89" height="32" loading="lazy">
         <h4>Beam</h4>
         <p class="portfolio-desc">M&A payments and contractor marketplace for the construction industry.</p>
         <span class="portfolio-tag">M&amp;A</span><span class="portfolio-tag">Payments</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/bundle" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/bundle.png" alt="Bundle logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/bundle.png" alt="Bundle logo" class="portfolio-logo" width="80" height="32" loading="lazy">
         <h4>Bundle</h4>
         <p class="portfolio-desc">Procurement marketplace for construction materials and supplies.</p>
         <span class="portfolio-tag">Marketplace</span><span class="portfolio-tag">Procurement</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/tangible-materials" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/tangible-materials.png" alt="Tangible Materials logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/tangible-materials.png" alt="Tangible Materials logo" class="portfolio-logo" width="93" height="32" loading="lazy">
         <h4>Tangible Materials</h4>
         <p class="portfolio-desc">New materials for CO2 reduction in construction and manufacturing.</p>
         <span class="portfolio-tag">CO2 Reduction</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/rise" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/rise.png" alt="Rise logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/rise.png" alt="Rise logo" class="portfolio-logo" width="50" height="32" loading="lazy">
         <h4>Rise</h4>
         <p class="portfolio-desc">Sustainability marketplace connecting builders with green materials and methods.</p>
         <span class="portfolio-tag">Sustainability</span>
         <div class="portfolio-stage">2023 &middot; Series A</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/wreno" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/wreno.png" alt="Wreno logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/wreno.png" alt="Wreno logo" class="portfolio-logo" width="118" height="32" loading="lazy">
         <h4>Wreno</h4>
         <p class="portfolio-desc">AI/ML marketplace for vendor compliance and contractor management.</p>
         <span class="portfolio-tag">AI/ML</span><span class="portfolio-tag">Marketplace</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
       <a href="https://www.buildtech.vc/portfolio/arx" class="portfolio-card" target="_blank" rel="noopener">
-        <img src="images/arx.png" alt="ARX logo" class="portfolio-logo" width="100" height="32" loading="lazy">
+        <img src="images/arx.png" alt="ARX logo" class="portfolio-logo" width="138" height="32" loading="lazy">
         <h4>ARX</h4>
         <p class="portfolio-desc">Data insights platform for construction project intelligence.</p>
         <span class="portfolio-tag">Data Insights</span>
@@ -912,16 +918,6 @@
     <div class="proof-subsection">
       <h3>Talks &amp; panels</h3>
       <div class="video-grid">
-        <a href="https://www.youtube.com/watch?v=IqzNO1e_3Go" class="video-card" target="_blank" rel="noopener">
-          <div class="video-thumb">
-            <img src="images/yt-IqzNO1e_3Go.jpg" alt="BitBuilders Podcast episode" width="320" height="180" loading="lazy">
-            <div class="video-play" aria-hidden="true">&#9654;</div>
-          </div>
-          <div class="video-info">
-            <h4>3D Printing Homes: How Mighty Buildings Is Doing It</h4>
-            <div class="outlet">BitBuilders Podcast</div>
-          </div>
-        </a>
         <a href="https://www.youtube.com/live/MRW0r-qz9Rs" class="video-card" target="_blank" rel="noopener">
           <div class="video-thumb">
             <img src="images/yt-MRW0r-qz9Rs.jpg" alt="Interview on 3D printed materials" width="320" height="180" loading="lazy">
