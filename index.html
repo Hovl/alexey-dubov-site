@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1d243e">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <title>Alexey Dubov | 6x Founder, Managing Partner at BuildTech Ventures</title>
   <meta name="description" content="6x startup founder with 2 exits. Managing Partner at BuildTech Ventures. I build frontier technology companies from concept to the first proof.">
   <link rel="canonical" href="https://hovl.github.io/alexey-dubov-site/">
@@ -44,444 +46,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary-blue: #5056f7;
-      --dark-navy: #1d243e;
-      --gold: #f59e0b;
-      --accent-orange: #ff5f00;
-      --royal-blue: #476ef2;
-      --white: #FFFFFF;
-      --off-white: #f8f8f5;
-      --light-gray: #e5e5e5;
-      --dark-gray: #171717;
-      --med-gray: #737373;
-      --warm-gray: #525252;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--dark-gray);
-      background: var(--white);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-    .skip-link {
-      position: absolute; top: -100%; left: 0;
-      background: var(--primary-blue); color: var(--white);
-      padding: 0.5rem 1rem; z-index: 200; font-size: 0.85rem; text-decoration: none;
-    }
-    .skip-link:focus { top: 0; }
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--primary-blue); outline-offset: 2px;
-    }
-
-    /* Nav */
-    nav {
-      position: fixed; top: 0; width: 100%;
-      background: rgba(29, 36, 62, 0.95); backdrop-filter: blur(12px);
-      z-index: 100; padding: 0 2rem;
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between; height: 64px;
-    }
-    .nav-logo {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
-      font-size: 1.15rem; color: var(--white); text-decoration: none; letter-spacing: -0.01em;
-    }
-    .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a {
-      color: rgba(255,255,255,0.75); text-decoration: none;
-      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
-      text-transform: uppercase; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); }
-
-    /* Hero */
-    .hero {
-      background: var(--primary-blue); min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 8rem 2rem 6rem;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(ellipse at 30% 50%, rgba(255, 255, 255, 0.10) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 20%, rgba(212, 213, 253, 0.18) 0%, transparent 50%);
-      animation: drift 20s ease-in-out infinite;
-    }
-    @keyframes drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-2%, 1%); } }
-    .hero-content { position: relative; z-index: 1; max-width: 750px; }
-    .hero-photo {
-      width: 160px; height: 160px; border-radius: 50%;
-      object-fit: cover; border: 3px solid rgba(255,255,255,0.15); margin-bottom: 2rem;
-    }
-    .hero h1 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2.25rem, 5vw, 4rem); font-weight: 700;
-      color: var(--white); line-height: 1.1; margin-bottom: 1.5rem;
-    }
-    .hero h1 em { font-style: normal; color: var(--gold); }
-    .hero-subtitle {
-      font-size: 1.15rem; color: rgba(255,255,255,0.6);
-      line-height: 1.7; max-width: 580px; margin: 0 auto 2.5rem; font-weight: 300;
-    }
-    .hero-creds {
-      display: flex; justify-content: center; gap: 2.5rem;
-      margin-bottom: 3rem; flex-wrap: wrap;
-    }
-    .hero-cred {
-      text-align: center;
-    }
-    .hero-cred .num {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem;
-      font-weight: 700; color: var(--gold); display: block;
-    }
-    .hero-cred .label {
-      color: rgba(255,255,255,0.5); font-size: 0.75rem; letter-spacing: 0.06em;
-      text-transform: uppercase; margin-top: 0.15rem;
-    }
-    .hero-cta {
-      display: inline-block; background: var(--white); color: var(--primary-blue);
-      padding: 0.85rem 2.4rem; border-radius: 10rem; text-decoration: none;
-      font-weight: 500; font-size: 0.95rem; letter-spacing: 0.01em;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(29, 36, 62, 0.25); }
-    .hero-secondary-cta {
-      display: inline-block; color: rgba(255,255,255,0.5); text-decoration: none;
-      font-size: 0.8rem; margin-left: 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .hero-secondary-cta:hover { color: var(--white); border-color: var(--white); }
-
-    /* Sections */
-    section { padding: 6rem 2rem; }
-    .section-label {
-      display: inline-block; color: var(--accent-orange);
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.13rem;
-      text-transform: uppercase; margin-bottom: 1rem;
-    }
-    .section-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700;
-      color: var(--dark-navy); line-height: 1.2; margin-bottom: 1rem;
-    }
-    .section-desc {
-      font-family: 'Outfit', sans-serif; font-weight: 300;
-      color: var(--med-gray); font-size: 1.15rem; max-width: 650px; line-height: 1.6;
-    }
-    .hero-subtitle, .narrative-block p, .principle-card p, .venture-card p,
-    .portfolio-card .portfolio-desc, .focus-card p, .standard-card p {
-      font-family: 'Outfit', sans-serif; font-weight: 300;
-    }
-    .container { max-width: 1200px; margin: 0 auto; }
-
-    /* Narrative section */
-    .narrative { background: var(--white); }
-    .narrative-block {
-      max-width: 720px; margin: 0 auto 3rem;
-    }
-    .narrative-block:last-child { margin-bottom: 0; }
-    .narrative-block h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem;
-      font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
-    }
-    .narrative-block p {
-      color: var(--warm-gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem;
-    }
-    .narrative-block p:last-child { margin-bottom: 0; }
-
-    /* Principles */
-    .principles { background: var(--off-white); }
-    .principles-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem; margin-top: 3rem;
-    }
-    .principle-card {
-      background: var(--white); border-left: 3px solid var(--primary-blue);
-      padding: 2rem 2rem 2rem 2.5rem; border-radius: 0 8px 8px 0;
-    }
-    .principle-card h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem;
-      font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
-    }
-    .principle-card p {
-      color: var(--med-gray); font-size: 0.95rem; line-height: 1.7;
-    }
-    .principle-card blockquote {
-      border-left: none; margin: 0.75rem 0 0; padding: 0;
-      font-style: italic; color: var(--warm-gray); font-size: 0.9rem; line-height: 1.6;
-    }
-    .principle-card .source {
-      font-style: normal; font-size: 0.75rem; color: var(--med-gray);
-      display: block; margin-top: 0.3rem;
-    }
-
-    /* Ventures */
-    .ventures-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem; margin-top: 3rem;
-    }
-    .venture-card {
-      background: var(--dark-navy); border-radius: 1rem;
-      padding: 2.5rem; color: var(--white); transition: transform 0.2s;
-    }
-    .venture-card:hover { transform: translateY(-3px); }
-    .venture-logo {
-      height: 36px; width: auto; max-width: 100%; margin-bottom: 1rem;
-      object-fit: contain; object-position: left center; filter: brightness(0) invert(1);
-    }
-    .venture-logo.light-filter { filter: none; }
-    .venture-card h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem;
-      font-weight: 700; margin-bottom: 0.5rem;
-    }
-    .venture-card .role {
-      color: var(--gold); font-size: 0.85rem; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem;
-    }
-    .venture-card p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
-
-    /* Portfolio */
-    .focus { background: var(--off-white); }
-    .portfolio-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
-    }
-    .portfolio-card {
-      background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 1rem; padding: 1.8rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none; color: inherit; display: block;
-    }
-    .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 1px 5px 3px rgba(0,0,0,0.05); }
-    .portfolio-logo { height: 32px; width: auto; max-width: 100%; margin-bottom: 0.8rem; object-fit: contain; object-position: left center; }
-    .portfolio-card h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
-      font-size: 1.1rem; color: var(--dark-navy); margin-bottom: 0.3rem;
-    }
-    .portfolio-card .portfolio-desc {
-      color: var(--med-gray); font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.5rem;
-    }
-    .portfolio-tag {
-      display: inline-block; background: rgba(80, 86, 247, 0.08); color: var(--primary-blue);
-      font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem;
-      border-radius: 4px; margin-right: 0.3rem; margin-bottom: 0.3rem;
-    }
-    .portfolio-stage { font-size: 0.8rem; color: var(--med-gray); margin-top: 0.5rem; }
-
-    /* Proof section — standards, writing, media */
-    .proof-section { background: var(--white); }
-    .proof-subsection { margin-bottom: 3rem; }
-    .proof-subsection:last-child { margin-bottom: 0; }
-    .proof-subsection h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem;
-      font-weight: 700; color: var(--dark-navy); margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem; border-bottom: 2px solid var(--light-gray);
-    }
-
-    /* Standards row */
-    .standards-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .standard-card {
-      background: var(--dark-navy); border-radius: 1rem; padding: 2rem; color: var(--white);
-    }
-    .standard-card .standard-label {
-      color: var(--gold); font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;
-    }
-    .standard-card h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem;
-      font-weight: 700; margin-bottom: 0.5rem;
-    }
-    .standard-card p {
-      color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.6;
-    }
-    .standard-card a {
-      color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 600;
-      display: inline-block; margin-top: 0.75rem;
-    }
-    .standard-card a:hover { text-decoration: underline; }
-
-    /* Writing list */
-    .writing-list { display: flex; flex-direction: column; gap: 1rem; }
-    .writing-item {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem 2rem; background: var(--white);
-      border: 1px solid var(--light-gray); border-radius: 1rem;
-      text-decoration: none; color: inherit;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .writing-item:hover { transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-    .writing-item h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600;
-      color: var(--dark-navy); font-size: 1rem;
-    }
-    .writing-meta {
-      display: flex; align-items: center; gap: 0.8rem;
-      flex-shrink: 0; margin-left: 1rem;
-    }
-    .writing-item .source {
-      background: rgba(80, 86, 247, 0.08); color: var(--primary-blue);
-      font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px;
-    }
-    .writing-item .date { color: var(--med-gray); font-size: 0.8rem; white-space: nowrap; }
-    .writing-item .arrow { color: var(--primary-blue); font-size: 1.2rem; }
-
-    /* Media grid */
-    .media-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-    .media-item {
-      display: flex; align-items: center; gap: 0.8rem;
-      padding: 1rem 1.2rem; background: var(--white);
-      border: 1px solid var(--light-gray); border-radius: 1rem;
-      text-decoration: none; color: inherit;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .media-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    .media-badge {
-      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 0.2rem 0.5rem;
-      border-radius: 4px; flex-shrink: 0;
-    }
-    .media-badge.podcast { background: rgba(245, 158, 11, 0.12); color: #c07c08; }
-    .media-badge.press { background: rgba(80, 86, 247, 0.08); color: var(--primary-blue); }
-    .media-badge.speaking { background: rgba(245, 158, 11, 0.12); color: #c07c08; }
-    .media-badge.standard { background: rgba(80, 86, 247, 0.08); color: var(--primary-blue); }
-    .media-item .media-text { font-size: 0.9rem; color: var(--dark-navy); font-weight: 500; }
-    .media-item .media-outlet { font-size: 0.75rem; color: var(--med-gray); }
-
-    /* Videos */
-    .video-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.5rem; margin-top: 2rem;
-    }
-    .video-card {
-      background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 1rem; overflow: hidden; text-decoration: none;
-      color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: block;
-    }
-    .video-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-    .video-thumb {
-      position: relative; width: 100%; aspect-ratio: 16/9;
-      background: var(--dark-navy); overflow: hidden;
-    }
-    .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
-    .video-play {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 56px; height: 56px; background: rgba(80, 86, 247, 0.9);
-      border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; color: var(--white); font-size: 1.2rem;
-    }
-    .video-info { padding: 1.2rem 1.5rem; }
-    .video-info h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
-      font-size: 1rem; color: var(--dark-navy); margin-bottom: 0.3rem; line-height: 1.3;
-    }
-    .video-info .outlet { color: var(--med-gray); font-size: 0.85rem; }
-
-    /* Focus cards (looking for) */
-    .focus-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem; margin-top: 3rem;
-    }
-    .focus-card {
-      background: var(--white); border: 1px solid var(--light-gray);
-      border-radius: 1rem; padding: 2.5rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .focus-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-    .focus-card-icon {
-      width: 48px; height: 48px; background: var(--primary-blue);
-      border-radius: 10px; display: flex; align-items: center;
-      justify-content: center; margin-bottom: 1.5rem; font-size: 1.4rem; color: var(--white);
-    }
-    .focus-card h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem;
-      font-weight: 700; color: var(--dark-navy); margin-bottom: 0.75rem;
-    }
-    .focus-card p { color: var(--med-gray); font-size: 0.95rem; line-height: 1.7; }
-
-    /* Badges */
-    .about-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-    .badge {
-      display: inline-block; background: rgba(80, 86, 247, 0.06); color: var(--primary-blue);
-      font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 50px;
-      border: 1px solid rgba(80, 86, 247, 0.15);
-    }
-
-    /* Mid-page CTA */
-    .mid-cta { background: var(--primary-blue); padding: 4rem 2rem; text-align: center; }
-    .mid-cta h2 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700;
-      color: var(--white); margin-bottom: 1rem;
-    }
-    .mid-cta p {
-      color: rgba(255,255,255,0.8); font-size: 1rem;
-      margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;
-    }
-    .mid-cta a {
-      display: inline-block; background: var(--white); color: var(--primary-blue);
-      padding: 0.8rem 2rem; border-radius: 10rem; text-decoration: none;
-      font-weight: 500; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .mid-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-
-    /* Contact */
-    .contact { background: var(--white); text-align: center; padding: 6rem 2rem; }
-    .contact-links {
-      display: flex; gap: 1.5rem; justify-content: center;
-      margin-top: 2rem; flex-wrap: wrap;
-    }
-    .contact-link {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.8rem; border: 2px solid var(--med-gray);
-      border-radius: 10rem; text-decoration: none; color: var(--med-gray);
-      font-weight: 500; font-size: 0.95rem; transition: all 0.2s;
-    }
-    .contact-link:hover { background: var(--light-gray); border-color: var(--light-gray); color: var(--dark-navy); }
-    .contact-link.primary {
-      background: var(--primary-blue); border-color: var(--primary-blue); color: var(--white);
-    }
-    .contact-link.primary:hover { background: var(--royal-blue); border-color: var(--royal-blue); color: var(--white); }
-
-    /* Footer */
-    footer {
-      background: var(--dark-navy); color: rgba(255,255,255,0.4);
-      text-align: center; padding: 2rem; font-size: 0.8rem;
-    }
-    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-    footer a:hover { color: var(--white); }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      section { padding: 4rem 1.5rem; }
-      .focus-grid, .ventures-grid, .video-grid, .standards-grid { grid-template-columns: 1fr; }
-      .media-grid { grid-template-columns: 1fr; }
-      .principles-grid { grid-template-columns: 1fr; }
-      .hero { padding: 6rem 1.5rem 4rem; }
-      .hero-creds { gap: 1.5rem; }
-      .writing-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .writing-meta { margin-left: 0; }
-      .hero-secondary-cta { display: block; margin-left: 0; margin-top: 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <nav role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
@@ -493,6 +63,13 @@
       <a href="#portfolio">Portfolio</a>
       <a href="#proof">Proof</a>
       <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
@@ -525,7 +102,7 @@
         <span class="label">People Employed Over the Years</span>
       </div>
     </div>
-    <a href="https://www.linkedin.com/in/alekseydubov" class="hero-cta" data-plausible-event="cta-hero">Work With Me</a>
+    <a href="https://www.linkedin.com/in/alekseydubov" class="hero-cta" data-plausible-event="cta-hero" target="_blank" rel="noopener">Work With Me</a>
 
   </div>
 </section>
@@ -716,71 +293,78 @@
     <span class="section-label">Portfolio</span>
     <h2 class="section-title">Key investments</h2>
     <p class="section-desc">Selected companies from the BuildTech Ventures portfolio. Each pushing on a real problem in the built environment.</p>
+    <div class="filter-bar" role="group" aria-label="Filter by stage" data-filter-bar="stage">
+      <button type="button" class="filter-chip active" data-value="all">All</button>
+      <button type="button" class="filter-chip" data-value="pre-seed">Pre-Seed</button>
+      <button type="button" class="filter-chip" data-value="seed">Seed</button>
+      <button type="button" class="filter-chip" data-value="series-a">Series A</button>
+      <button type="button" class="filter-chip" data-value="series-b">Series B</button>
+    </div>
     <div class="portfolio-grid">
-      <a href="https://www.buildtech.vc/portfolio/kite-compliance" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/kite-compliance" class="portfolio-card" data-stage="pre-seed" target="_blank" rel="noopener">
         <img src="images/kite-compliance.png" alt="Kite Compliance logo" class="portfolio-logo" width="221" height="32" loading="lazy">
         <h4>Kite Compliance</h4>
         <p class="portfolio-desc">AI-powered compliance navigation for prefab and construction teams. I serve as independent director.</p>
         <span class="portfolio-tag">AI</span><span class="portfolio-tag">Compliance</span>
         <div class="portfolio-stage">2026 &middot; Pre-Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/rem-brain" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/rem-brain" class="portfolio-card" data-stage="pre-seed" target="_blank" rel="noopener">
         <img src="images/rem-brain.jpeg" alt="Rem Brain logo" class="portfolio-logo" width="32" height="32" loading="lazy">
         <h4>Rem Brain</h4>
         <p class="portfolio-desc">Physical AI for assembly lines and manufacturing automation.</p>
         <span class="portfolio-tag">Robotics</span>
         <div class="portfolio-stage">2025 &middot; Pre-Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/higharc" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/higharc" class="portfolio-card" data-stage="series-b" target="_blank" rel="noopener">
         <img src="images/higharc.png" alt="Higharc logo" class="portfolio-logo" width="154" height="32" loading="lazy">
         <h4>Higharc</h4>
         <p class="portfolio-desc">Homebuilding cloud for design, estimation, sales, and construction.</p>
         <span class="portfolio-tag">Automated Design</span>
         <div class="portfolio-stage">2024 &middot; Series B</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/hywatts" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/hywatts" class="portfolio-card" data-stage="pre-seed" target="_blank" rel="noopener">
         <img src="images/hywatts.png" alt="HyWatts logo" class="portfolio-logo" width="134" height="32" loading="lazy">
         <h4>HyWatts</h4>
         <p class="portfolio-desc">Renewable and low-cost energy with Power-Plant-in-a-Box.</p>
         <span class="portfolio-tag">New Energy</span>
         <div class="portfolio-stage">2024 &middot; Pre-Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/beam" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/beam" class="portfolio-card" data-stage="seed" target="_blank" rel="noopener">
         <img src="images/beam.png" alt="Beam logo" class="portfolio-logo" width="89" height="32" loading="lazy">
         <h4>Beam</h4>
         <p class="portfolio-desc">M&A payments and contractor marketplace for the construction industry.</p>
         <span class="portfolio-tag">M&amp;A</span><span class="portfolio-tag">Payments</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/bundle" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/bundle" class="portfolio-card" data-stage="seed" target="_blank" rel="noopener">
         <img src="images/bundle.png" alt="Bundle logo" class="portfolio-logo" width="80" height="32" loading="lazy">
         <h4>Bundle</h4>
         <p class="portfolio-desc">Procurement marketplace for construction materials and supplies.</p>
         <span class="portfolio-tag">Marketplace</span><span class="portfolio-tag">Procurement</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/tangible-materials" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/tangible-materials" class="portfolio-card" data-stage="seed" target="_blank" rel="noopener">
         <img src="images/tangible-materials.png" alt="Tangible Materials logo" class="portfolio-logo" width="93" height="32" loading="lazy">
         <h4>Tangible Materials</h4>
         <p class="portfolio-desc">New materials for CO2 reduction in construction and manufacturing.</p>
         <span class="portfolio-tag">CO2 Reduction</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/rise" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/rise" class="portfolio-card" data-stage="series-a" target="_blank" rel="noopener">
         <img src="images/rise.png" alt="Rise logo" class="portfolio-logo" width="50" height="32" loading="lazy">
         <h4>Rise</h4>
         <p class="portfolio-desc">Sustainability marketplace connecting builders with green materials and methods.</p>
         <span class="portfolio-tag">Sustainability</span>
         <div class="portfolio-stage">2023 &middot; Series A</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/wreno" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/wreno" class="portfolio-card" data-stage="seed" target="_blank" rel="noopener">
         <img src="images/wreno.png" alt="Wreno logo" class="portfolio-logo" width="118" height="32" loading="lazy">
         <h4>Wreno</h4>
         <p class="portfolio-desc">AI/ML marketplace for vendor compliance and contractor management.</p>
         <span class="portfolio-tag">AI/ML</span><span class="portfolio-tag">Marketplace</span>
         <div class="portfolio-stage">2023 &middot; Seed</div>
       </a>
-      <a href="https://www.buildtech.vc/portfolio/arx" class="portfolio-card" target="_blank" rel="noopener">
+      <a href="https://www.buildtech.vc/portfolio/arx" class="portfolio-card" data-stage="seed" target="_blank" rel="noopener">
         <img src="images/arx.png" alt="ARX logo" class="portfolio-logo" width="138" height="32" loading="lazy">
         <h4>ARX</h4>
         <p class="portfolio-desc">Data insights platform for construction project intelligence.</p>
@@ -795,7 +379,7 @@
 <section class="mid-cta" aria-label="Get in touch">
   <h2>Working on something hard in the built world?</h2>
   <p>I invest in early-stage teams solving real problems with real technology. If that's you, let's talk.</p>
-  <a href="https://www.linkedin.com/in/alekseydubov" data-plausible-event="cta-midpage">Get in Touch</a>
+  <a href="https://www.linkedin.com/in/alekseydubov" data-plausible-event="cta-midpage" target="_blank" rel="noopener">Get in Touch</a>
 </section>
 
 <!-- ===== PROOF ===== -->
@@ -831,48 +415,53 @@
     <!-- Writing -->
     <div class="proof-subsection">
       <h3>Articles on LinkedIn</h3>
+      <div class="filter-bar" role="group" aria-label="Filter by source" data-filter-bar="source">
+        <button type="button" class="filter-chip active" data-value="all">All</button>
+        <button type="button" class="filter-chip" data-value="linkedin">LinkedIn</button>
+        <button type="button" class="filter-chip" data-value="forbes">Forbes</button>
+      </div>
       <div class="writing-list">
-        <a href="https://www.linkedin.com/pulse/how-i-evaluate-robotics-companies-alexey-dubov-omhic" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/how-i-evaluate-robotics-companies-alexey-dubov-omhic" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>How I Evaluate Robotics Companies</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Oct 29, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/patent-business-engineering-alexey-dubov-mg9zc" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/patent-business-engineering-alexey-dubov-mg9zc" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>Patent the Business, Not the Engineering</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Oct 27, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/i-wanted-argue-microfactories-picked-gigafactories-alexey-dubov-0mp1c" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/i-wanted-argue-microfactories-picked-gigafactories-alexey-dubov-0mp1c" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>I Wanted to Argue for Microfactories. I Picked Gigafactories.</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Oct 5, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/why-ai-coding-tools-fix-grid-before-touch-job-site-alexey-dubov-hq62c" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/why-ai-coding-tools-fix-grid-before-touch-job-site-alexey-dubov-hq62c" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>Why AI Coding Tools Will Fix the Grid Before They Touch a Job Site</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Aug 26, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/fourth-constraint-why-data-center-risk-now-shows-up-stock-dubov-dlhie" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/fourth-constraint-why-data-center-risk-now-shows-up-stock-dubov-dlhie" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>The Fourth Constraint: Why Data Center Risk Now Shows Up in the Stock Price, Not Just the Permit Queue</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Aug 19, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/ai-infrastructure-has-quality-control-problem-nobodys-alexey-dubov-gc23c" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/ai-infrastructure-has-quality-control-problem-nobodys-alexey-dubov-gc23c" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>AI Infrastructure Has a Quality Control Problem Nobody's Pricing In</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Aug 6, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/missing-layer-teleoperation-cognitive-state-awareness-alexey-dubov-zasuc" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/missing-layer-teleoperation-cognitive-state-awareness-alexey-dubov-zasuc" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>The Missing Layer in Teleoperation: Cognitive State Awareness</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 30, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/robot-room-why-dexterity-price-real-barrier-automating-alexey-dubov-el9kc" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/robot-room-why-dexterity-price-real-barrier-automating-alexey-dubov-el9kc" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>The Robot in the Room: Why Dexterity, Not Price, Is the Real Barrier to Automating Construction and Prefab</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">Jun 22, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/permitting-bottleneck-real-ai-infrastructure-problem-alexey-dubov-9qt0c" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/permitting-bottleneck-real-ai-infrastructure-problem-alexey-dubov-9qt0c" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>The Permitting Bottleneck Is the Real AI Infrastructure Problem</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 12, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.linkedin.com/pulse/air-quality-flywheel-alexey-dubov-ioi7c" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/pulse/air-quality-flywheel-alexey-dubov-ioi7c" class="writing-item" data-source="linkedin" target="_blank" rel="noopener">
           <h4>The Air Quality Flywheel</h4>
           <div class="writing-meta"><span class="source">LinkedIn</span><span class="date">May 4, 2026</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
-        <a href="https://www.forbes.com/councils/forbestechcouncil/2022/12/29/construction-tech-a-tough-nut-to-crack/" class="writing-item" target="_blank" rel="noopener">
+        <a href="https://www.forbes.com/councils/forbestechcouncil/2022/12/29/construction-tech-a-tough-nut-to-crack/" class="writing-item" data-source="forbes" target="_blank" rel="noopener">
           <h4>Construction Tech &mdash; A Tough Nut to Crack</h4>
           <div class="writing-meta"><span class="source">Forbes</span><span class="date">Dec 2022</span><span class="arrow" aria-hidden="true">&rarr;</span></div>
         </a>
@@ -961,8 +550,7 @@
     <h2 class="section-title">Let's build something</h2>
     <p class="section-desc" style="margin: 0 auto;">If you're working on something that doesn't exist yet, I'd like to hear about it.</p>
     <div class="contact-links">
-      <a href="https://www.linkedin.com/in/alekseydubov" class="contact-link primary" data-plausible-event="cta-contact">Email Me</a>
-      <a href="https://www.linkedin.com/in/alekseydubov" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/alekseydubov" class="contact-link primary" data-plausible-event="cta-contact" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.buildtech.vc" class="contact-link" target="_blank" rel="noopener">BuildTech Ventures</a>
       <a href="https://www.echofuturematter.com" class="contact-link" target="_blank" rel="noopener">Echoes of Future Matter</a>
     </div>
@@ -971,9 +559,12 @@
 
 </main>
 
+<button class="back-to-top" type="button" aria-label="Back to top">&#8593;</button>
+
 <footer role="contentinfo">
-  <p>&copy; 2026 Alexey Dubov &middot; San Francisco Bay Area &middot; <a href="https://www.linkedin.com/in/alekseydubov">contact via LinkedIn</a></p>
+  <p>&copy; 2026 Alexey Dubov &middot; San Francisco Bay Area</p>
 </footer>
 
+<script src="main.js" defer></script>
 </body>
 </html>
