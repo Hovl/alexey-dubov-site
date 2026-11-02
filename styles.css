@@ -337,6 +337,16 @@ section { padding: 6rem 2rem; }
 }
 [data-theme="dark"] .portfolio-tag { color: #a5a9ff; }
 .portfolio-stage { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
+.portfolio-badge {
+  display: inline-block; font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem;
+  background: var(--chip-bg); color: var(--primary-blue);
+  border: 1px solid var(--chip-border);
+}
+[data-theme="dark"] .portfolio-badge { color: #a5a9ff; }
+div.portfolio-card { cursor: default; }
+div.portfolio-card:hover { transform: none; box-shadow: none; border-color: var(--border); }
 
 /* ---------- filter chips ---------- */
 .filter-bar {

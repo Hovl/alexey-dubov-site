@@ -94,7 +94,7 @@
     });
   }
 
-  /* ---------- filters (portfolio by stage, articles by source) ---------- */
+  /* ---------- filters (portfolio by status, articles by source) ---------- */
   function setupFilter(barSelector, itemSelector, attr) {
     var bar = document.querySelector(barSelector);
     if (!bar) return;
@@ -112,7 +112,7 @@
       });
     });
   }
-  setupFilter('[data-filter-bar="stage"]', '.portfolio-card', 'data-stage');
+  setupFilter('[data-filter-bar="status"]', '.portfolio-card', 'data-status');
   setupFilter('[data-filter-bar="source"]', '.writing-item', 'data-source');
 
   /* ---------- active nav link ---------- */
